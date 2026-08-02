@@ -22,40 +22,49 @@ const mono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://cinteca.es"),
   title: {
-    default: "Cinteca — Engenharia, software e sistemas conectados",
+    default: "Cinteca · AD Caldas Innotec, S.A.",
     template: "%s · Cinteca",
   },
   description:
-    "Engenharia aplicada, software, inteligência artificial, telecomunicações, automação e infraestrutura para transformar complexidade em sistemas confiáveis.",
+    "Sitio corporativo oficial de AD Caldas Innotec, S.A., titular de la marca Cinteca y promotora de productos de software, inteligencia artificial e infraestructura tecnológica.",
   keywords: [
-    "engenharia de software",
-    "inteligência artificial",
-    "telecomunicações",
-    "automação industrial",
-    "sistemas embarcados",
-    "cloud",
-    "DevOps",
-    "infraestrutura de TI",
+    "AD Caldas Innotec",
+    "Cinteca",
+    "LegalNeuron",
+    "NordixBIOS",
+    "NCS Engine",
+    "software",
+    "inteligencia artificial",
+    "infraestructura tecnológica",
   ],
   openGraph: {
     type: "website",
-    locale: "pt_PT",
+    locale: "es_ES",
     url: "https://cinteca.es",
     siteName: "Cinteca",
-    title: "Cinteca — Complexidade conectada",
+    title: "Cinteca · AD Caldas Innotec, S.A.",
     description:
-      "Engenharia aplicada para sistemas que atravessam software, IA, redes, cloud, eletrónica e automação.",
+      "Sitio corporativo oficial y productos tecnológicos de AD Caldas Innotec, S.A.",
+    images: [
+      {
+        url: "/og.png",
+        width: 1730,
+        height: 909,
+        alt: "Cinteca · AD Caldas Innotec, S.A.",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
-    title: "Cinteca — Complexidade conectada",
+    card: "summary_large_image",
+    title: "Cinteca · AD Caldas Innotec, S.A.",
     description:
-      "Engenharia aplicada para sistemas que atravessam software, IA, redes, cloud, eletrónica e automação.",
+      "Sitio corporativo oficial y productos tecnológicos de AD Caldas Innotec, S.A.",
+    images: ["/og.png"],
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#eef4f5",
+  themeColor: "#edf2f1",
   colorScheme: "light",
 };
 
@@ -65,7 +74,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt">
+    <html lang="es">
       <body className={`${display.variable} ${body.variable} ${mono.variable}`}>
         {children}
       </body>

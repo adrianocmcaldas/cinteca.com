@@ -2,310 +2,81 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   description:
-    "Engenharia aplicada, software, inteligência artificial, telecomunicações, automação e infraestrutura para transformar complexidade em sistemas confiáveis.",
+    "Sitio corporativo oficial de AD Caldas Innotec, S.A., titular de la marca Cinteca y promotora de productos de software, inteligencia artificial e infraestructura tecnológica.",
   alternates: {
     canonical: "https://cinteca.es",
   },
 };
 
-const knowledgeDomains = [
+const products = [
   {
-    code: "DIR",
-    title: "Direção e estratégia tecnológica",
-    intro:
-      "Tecnologia alinhada ao negócio, com decisões claras sobre arquitetura, investimento, risco e evolução.",
-    topics: [
-      "Estratégia de TI",
-      "Roadmaps tecnológicos",
-      "Arquitetura corporativa",
-      "Due diligence técnica",
-      "Governança de TI",
-      "Gestão de portfólio",
-      "Orçamento e FinOps",
-      "Seleção de fornecedores",
-      "Contratos e SLAs",
-      "ITSM e operação",
-      "Gestão de equipas",
-      "Transformação digital",
-    ],
+    name: "LegalNeuron",
+    code: "LEGAL AI",
+    url: "https://legalneuron.es",
+    description:
+      "Software de inteligencia artificial y gestión para profesionales del derecho y despachos. Facilita el análisis, la revisión y la automatización de documentos y procesos jurídicos.",
   },
   {
-    code: "SWE",
-    title: "Engenharia de software",
-    intro:
-      "Produtos, plataformas e integrações desenhados para crescer sem perder clareza, desempenho ou segurança.",
-    topics: [
-      "Arquitetura de sistemas",
-      "Backend e frontend",
-      "APIs e integrações",
-      "Microsserviços",
-      "Sistemas distribuídos",
-      "Bases SQL e NoSQL",
-      "Mensageria e eventos",
-      "Testes e qualidade",
-      "Modernização de legados",
-      "SaaS e plataformas",
-      "Open source",
-      "Documentação técnica",
-    ],
+    name: "NordixBIOS",
+    code: "EMBEDDED AI",
+    url: "https://nordixbios.com/es/",
+    description:
+      "Asistente de inteligencia artificial de marca blanca que se integra en software existente, ejecuta operaciones y acompaña la evolución del producto.",
   },
   {
-    code: "AIM",
-    title: "IA, dados e processamento de sinais",
-    intro:
-      "Da investigação algorítmica à aplicação prática de modelos em dados, sinais, imagens, texto e séries temporais.",
-    topics: [
-      "Machine learning",
-      "Deep learning",
-      "Processamento digital de sinais",
-      "Visão computacional",
-      "Áudio e voz",
-      "Séries temporais",
-      "Otimização",
-      "LLMs e agentes",
-      "RAG e busca semântica",
-      "MLOps e LLMOps",
-      "Pipelines de dados",
-      "Inferência em edge",
-    ],
-  },
-  {
-    code: "GPU",
-    title: "Computação acelerada",
-    intro:
-      "Ambientes de alto desempenho para treino, inferência, simulação e cargas paralelas.",
-    topics: [
-      "GPUs e clusters",
-      "PODs de computação",
-      "Orquestração de cargas",
-      "CUDA e aceleração",
-      "Treino distribuído",
-      "Serving de modelos",
-      "Otimização de memória",
-      "Contêineres para IA",
-      "Observabilidade de GPU",
-      "Capacidade e custos",
-      "HPC",
-      "Edge AI",
-    ],
-  },
-  {
-    code: "TEL",
-    title: "Redes e telecomunicações",
-    intro:
-      "Conectividade local, distribuída e crítica — do meio físico à visibilidade operacional.",
-    topics: [
-      "LAN, WAN e SD-WAN",
-      "Wi-Fi corporativo",
-      "TCP/IP, BGP e OSPF",
-      "VLAN, VPN e QoS",
-      "VoIP, SIP e UC",
-      "Fibra e rádio",
-      "4G, 5G e IoT",
-      "DNS, DHCP e IPAM",
-      "Balanceamento e CDN",
-      "Monitorização de rede",
-      "Redundância",
-      "NOC e gestão de operadoras",
-    ],
-  },
-  {
-    code: "CLD",
-    title: "Cloud, plataformas e DevOps",
-    intro:
-      "Infraestruturas reproduzíveis e observáveis em ambientes locais, híbridos ou multicloud.",
-    topics: [
-      "AWS, Azure e Google Cloud",
-      "Cloud híbrida e multicloud",
-      "Linux e Windows Server",
-      "Contêineres e Kubernetes",
-      "CI/CD",
-      "Infraestrutura como código",
-      "Platform engineering",
-      "SRE e observabilidade",
-      "Logs, métricas e traces",
-      "Virtualização",
-      "Armazenamento e backup",
-      "FinOps e otimização",
-    ],
-  },
-  {
-    code: "SEC",
-    title: "Segurança e continuidade",
-    intro:
-      "Proteção incorporada ao desenho, à operação e à recuperação dos sistemas.",
-    topics: [
-      "Security by design",
-      "IAM e acesso privilegiado",
-      "Zero Trust",
-      "Hardening",
-      "Segurança de redes",
-      "Segurança cloud",
-      "Gestão de vulnerabilidades",
-      "SIEM e resposta a incidentes",
-      "Backup e disaster recovery",
-      "Continuidade de negócio",
-      "Privacidade e RGPD",
-      "Políticas e auditoria",
-    ],
-  },
-  {
-    code: "EMB",
-    title: "Eletrónica e sistemas embarcados",
-    intro:
-      "Software e hardware encontram-se em dispositivos, sensores e equipamentos conectados.",
-    topics: [
-      "Microcontroladores",
-      "Firmware e embedded C/C++",
-      "RTOS",
-      "Sensores e atuadores",
-      "Instrumentação",
-      "Aquisição de dados",
-      "Eletrónica analógica e digital",
-      "Interfaces e barramentos",
-      "Prototipagem de PCB",
-      "Fontes e potência",
-      "FPGA e lógica programável",
-      "Testes de bancada",
-    ],
-  },
-  {
-    code: "AUT",
-    title: "Automação industrial e residencial",
-    intro:
-      "Controlo, telemetria e integração para instalações, máquinas e edifícios inteligentes.",
-    topics: [
-      "CLPs e controlo",
-      "SCADA e HMI",
-      "Modbus e OPC UA",
-      "MQTT e telemetria",
-      "BACnet e KNX",
-      "CAN e redes industriais",
-      "Home Assistant",
-      "Matter, Zigbee e Z-Wave",
-      "Eficiência energética",
-      "Controlo de motores",
-      "Manutenção preditiva",
-      "IIoT e edge computing",
-    ],
-  },
-  {
-    code: "APP",
-    title: "Aplicações multiplataforma",
-    intro:
-      "Experiências consistentes em web, desktop, dispositivos móveis e ambientes especializados.",
-    topics: [
-      "Web apps e PWAs",
-      "Windows, Linux e macOS",
-      "Android e iOS",
-      "Aplicações nativas e híbridas",
-      "Offline-first",
-      "Sincronização de dados",
-      "Integração com hardware",
-      "UX e acessibilidade",
-      "Distribuição e atualizações",
-      "Telemetria de produto",
-      "Desempenho",
-      "Internacionalização",
-    ],
-  },
-  {
-    code: "OPS",
-    title: "Operação e serviços geridos",
-    intro:
-      "Ambientes acompanhados de ponta a ponta, próprios ou de terceiros, com responsabilidade operacional clara.",
-    topics: [
-      "Administração de sistemas",
-      "Service desk e suporte",
-      "Monitorização 24×7",
-      "Gestão de capacidade",
-      "Patching e ciclo de vida",
-      "Gestão de ativos",
-      "Runbooks e automação",
-      "SLIs, SLOs e SLAs",
-      "Gestão de incidentes",
-      "Problem management",
-      "Migrações",
-      "Operação de terceiros",
-    ],
-  },
-  {
-    code: "DIG",
-    title: "Presença digital e crescimento",
-    intro:
-      "Tecnologia, conteúdo e medição integrados para transformar presença digital em resultados.",
-    topics: [
-      "Sites e e-commerce",
-      "SEO técnico e editorial",
-      "GEO e LLMO",
-      "Publicidade paga",
-      "Analytics e atribuição",
-      "CRO e experimentação",
-      "Mídias e redes sociais",
-      "Automação de marketing",
-      "CRM e fidelização",
-      "Tag management",
-      "Dados estruturados",
-      "Performance web",
-    ],
+    name: "NCS Engine",
+    code: "AI INFRASTRUCTURE",
+    url: "https://ncsengine.com",
+    description:
+      "Infraestructura segura para desplegar y operar inteligencia artificial en entornos cloud, locales e híbridos.",
   },
 ];
 
-const ownedProjects = [
-  "cinte.com.br",
-  "legalneuron.es",
-  "legalneuron.com.br",
-  "nordixbios.com",
-  "ncsengine.com",
-  "nordixsystems.com",
+const companyFacts = [
+  ["Denominación social", "AD Caldas Innotec, S.A."],
+  ["NIF", "A66316399"],
+  ["Domicilio social", "Calle Blanco, 10 · Torrecera · 11595 Jerez de la Frontera · Cádiz · España"],
+  ["Registro Mercantil", "Cádiz · Tomo 2350 · Folio 9 · Sección 8 · Hoja CA-56553 · Inscripción 4"],
 ];
 
-const thirdPartyProjects = ["plorea.com", "grupolaeras.com", "innocardloyalty.ch"];
-
-const method = [
-  {
-    verb: "Enquadrar",
-    text: "Objetivo, contexto, risco, restrições e critérios de sucesso antes da escolha de ferramentas.",
-  },
-  {
-    verb: "Arquitetar",
-    text: "Desenho do sistema completo, das integrações e da operação futura — sem silos artificiais.",
-  },
-  {
-    verb: "Construir",
-    text: "Implementação incremental com qualidade verificável, documentação e transferência de conhecimento.",
-  },
-  {
-    verb: "Operar",
-    text: "Observabilidade, segurança, continuidade e responsabilidade sobre o que está em produção.",
-  },
-  {
-    verb: "Evoluir",
-    text: "Medição contínua para reduzir fricção, custo e risco enquanto a capacidade aumenta.",
-  },
-];
-
-const jsonLd = {
+const companyJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://cinteca.es/#organization",
   name: "Cinteca",
+  legalName: "AD Caldas Innotec, S.A.",
   url: "https://cinteca.es",
+  taxID: "A66316399",
+  foundingDate: "2014-06-06",
+  email: "adriano@cinteca.es",
+  telephone: "+34665478150",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Calle Blanco, 10, Torrecera",
+    postalCode: "11595",
+    addressLocality: "Jerez de la Frontera",
+    addressRegion: "Cádiz",
+    addressCountry: "ES",
+  },
+  brand: {
+    "@type": "Brand",
+    name: "Cinteca",
+  },
+  sameAs: products.map((product) => product.url),
   description:
-    "Engenharia aplicada, software, inteligência artificial, telecomunicações, automação e infraestrutura.",
-  areaServed: ["Europe", "Brazil", "Remote"],
-  knowsAbout: knowledgeDomains.flatMap((domain) => domain.topics),
+    "Empresa tecnológica española dedicada al desarrollo y gestión de software, inteligencia artificial e infraestructura digital.",
 };
 
 export default function Home() {
   return (
-    <main>
+    <main id="inicio">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(companyJsonLd) }}
       />
 
       <header className="site-header">
-        <a className="brand" href="#inicio" aria-label="Cinteca — início">
+        <a className="brand" href="#inicio" aria-label="Cinteca — inicio">
           <span className="brand-mark" aria-hidden="true">
             <i />
             <i />
@@ -314,277 +85,364 @@ export default function Home() {
           <span>cinteca</span>
         </a>
 
-        <nav className="desktop-nav" aria-label="Navegação principal">
-          <a href="#conhecimento">Conhecimento</a>
-          <a href="#metodo">Método</a>
-          <a href="#projetos">Projetos</a>
-          <a className="nav-contact" href="#contacto">
-            Falar connosco
-          </a>
+        <p className="header-entity">AD Caldas Innotec, S.A.</p>
+
+        <nav className="desktop-nav" aria-label="Navegación principal">
+          <a href="#empresa">Empresa</a>
+          <a href="#productos">Productos</a>
+          <a href="#contacto">Contacto</a>
+          <a href="#aviso-legal">Aviso legal</a>
         </nav>
 
         <details className="mobile-nav">
-          <summary aria-label="Abrir menu">Menu</summary>
-          <nav aria-label="Navegação móvel">
-            <a href="#conhecimento">Conhecimento</a>
-            <a href="#metodo">Método</a>
-            <a href="#projetos">Projetos</a>
+          <summary aria-label="Abrir menú">Menú</summary>
+          <nav aria-label="Navegación móvil">
+            <a href="#empresa">Empresa</a>
+            <a href="#productos">Productos</a>
             <a href="#contacto">Contacto</a>
+            <a href="#aviso-legal">Aviso legal</a>
+            <a href="#privacidad">Privacidad</a>
           </nav>
         </details>
       </header>
 
-      <section className="hero" id="inicio">
+      <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="eyebrow">
-            Engenharia aplicada <span>•</span> Tecnologia sem silos
-          </p>
-          <h1>
-            Complexidade
-            <span className="hero-shift">conectada.</span>
-            <span className="hero-accent">Soluções que funcionam.</span>
-          </h1>
+          <p className="eyebrow">Sitio corporativo oficial</p>
+          <h1 id="hero-title">Tecnología aplicada, construida para operar.</h1>
           <p className="hero-intro">
-            A Cinteca integra estratégia, software, IA, telecomunicações,
-            eletrónica, automação e infraestrutura para construir sistemas
-            completos — do sinal ao negócio.
+            Cinteca es la marca tecnológica de AD Caldas Innotec, S.A. La
+            compañía desarrolla y gestiona productos de software, inteligencia
+            artificial e infraestructura digital para profesionales y empresas.
           </p>
-          <div className="hero-actions">
-            <a className="button button-primary" href="#conhecimento">
-              Explorar capacidades
-              <span aria-hidden="true">↓</span>
+        </div>
+
+        <aside className="identity-card" aria-label="Identificación de la empresa">
+          <div className="identity-heading">
+            <p>Entidad mercantil española</p>
+            <span>ES</span>
+          </div>
+          <dl>
+            <div>
+              <dt>Razón social</dt>
+              <dd>AD Caldas Innotec, S.A.</dd>
+            </div>
+            <div>
+              <dt>NIF</dt>
+              <dd>A66316399</dd>
+            </div>
+            <div>
+              <dt>Registro</dt>
+              <dd>RM Cádiz · Hoja CA-56553</dd>
+            </div>
+            <div>
+              <dt>Contacto</dt>
+              <dd>
+                <a href="mailto:adriano@cinteca.es">adriano@cinteca.es</a>
+              </dd>
+            </div>
+          </dl>
+          <a className="identity-link" href="#aviso-legal">
+            Ver identificación completa <span aria-hidden="true">↓</span>
+          </a>
+        </aside>
+      </section>
+
+      <div className="status-strip" aria-label="Información del sitio">
+        <p><span aria-hidden="true" /> Empresa activa</p>
+        <p>Actividad tecnológica desde 2014</p>
+        <p>España · Europa · Internacional</p>
+        <p>Sin cookies ni seguimiento</p>
+      </div>
+
+      <section className="section company" id="empresa">
+        <div className="section-label">
+          <p>La empresa</p>
+          <span>01</span>
+        </div>
+        <div className="company-copy">
+          <h2>Una entidad. Distintos productos tecnológicos.</h2>
+          <div className="company-paragraphs">
+            <p>
+              AD Caldas Innotec, S.A. es una sociedad mercantil española dedicada
+              a la prestación de servicios relacionados con las tecnologías de la
+              información y la comunicación, incluyendo la creación, el desarrollo
+              y la gestión de recursos web y aplicaciones de software.
+            </p>
+            <p>
+              Cinteca identifica el núcleo tecnológico y corporativo del grupo. Bajo
+              este marco se impulsan productos y marcas con identidad propia para
+              ámbitos jurídicos, empresariales y de infraestructura. Esta estructura
+              explica que el dominio corporativo y los productos anunciados puedan
+              utilizar nombres diferentes sin dejar de formar parte del mismo
+              ecosistema empresarial.
+            </p>
+          </div>
+
+          <div className="activity-grid" aria-label="Ámbitos de actividad">
+            <article>
+              <span>SOFTWARE</span>
+              <h3>Productos y plataformas</h3>
+              <p>Aplicaciones web, móviles y de escritorio, APIs e integraciones.</p>
+            </article>
+            <article>
+              <span>INTELIGENCIA</span>
+              <h3>IA aplicada</h3>
+              <p>Asistentes, modelos, automatización y procesamiento de información.</p>
+            </article>
+            <article>
+              <span>INFRAESTRUCTURA</span>
+              <h3>Sistemas y operación</h3>
+              <p>Cloud, entornos locales e híbridos, redes y computación acelerada.</p>
+            </article>
+            <article>
+              <span>INGENIERÍA</span>
+              <h3>Integración tecnológica</h3>
+              <p>Telecomunicaciones, automatización, electrónica y sistemas conectados.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section products" id="productos">
+        <div className="section-label">
+          <p>Productos</p>
+          <span>02</span>
+        </div>
+        <div className="products-content">
+          <div className="section-heading">
+            <h2>Productos con identidad propia.</h2>
+            <p>
+              Cada producto responde a un contexto específico y dispone de su
+              propio dominio, comunicación y propuesta de valor.
+            </p>
+          </div>
+
+          <div className="product-list">
+            {products.map((product, index) => (
+              <a
+                className="product-row"
+                href={product.url}
+                target="_blank"
+                rel="noreferrer"
+                key={product.name}
+              >
+                <span className="product-number">{String(index + 1).padStart(2, "0")}</span>
+                <div className="product-name">
+                  <span>{product.code}</span>
+                  <h3>{product.name}</h3>
+                </div>
+                <p>{product.description}</p>
+                <span className="product-arrow" aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section contact" id="contacto">
+        <div className="section-label light-label">
+          <p>Contacto</p>
+          <span>03</span>
+        </div>
+        <div className="contact-content">
+          <div>
+            <h2>Contacto directo.</h2>
+            <p>
+              No utilizamos formularios. Puede contactar con la empresa por
+              correo electrónico o teléfono.
+            </p>
+          </div>
+          <address>
+            <a href="mailto:adriano@cinteca.es">
+              <span>Correo electrónico</span>
+              <strong>adriano@cinteca.es</strong>
+              <i aria-hidden="true">↗</i>
             </a>
-            <a className="button button-quiet" href="#contacto">
-              Colocar um desafio
+            <a href="tel:+34665478150">
+              <span>Teléfono</span>
+              <strong>+34 665 478 150</strong>
+              <i aria-hidden="true">↗</i>
             </a>
-          </div>
-        </div>
-
-        <div className="system-map" aria-label="Mapa dos domínios tecnológicos da Cinteca">
-          <div className="map-grid" aria-hidden="true" />
-          <div className="map-line map-line-a" aria-hidden="true" />
-          <div className="map-line map-line-b" aria-hidden="true" />
-          <div className="map-line map-line-c" aria-hidden="true" />
-          <div className="map-core">
-            <span className="core-pulse" aria-hidden="true" />
-            <strong>cin</strong>
-            <small>integração</small>
-          </div>
-          <a className="map-node node-ai" href="#domain-AIM">
-            <span>AIM</span> IA + sinais
-          </a>
-          <a className="map-node node-cloud" href="#domain-CLD">
-            <span>CLD</span> cloud + ops
-          </a>
-          <a className="map-node node-tel" href="#domain-TEL">
-            <span>TEL</span> redes + telecom
-          </a>
-          <a className="map-node node-embedded" href="#domain-EMB">
-            <span>EMB</span> eletrónica
-          </a>
-          <a className="map-node node-auto" href="#domain-AUT">
-            <span>AUT</span> automação
-          </a>
-          <a className="map-node node-software" href="#domain-SWE">
-            <span>SWE</span> software
-          </a>
-          <p className="map-caption">Um sistema. Muitos níveis de decisão.</p>
+            <div>
+              <span>Domicilio social</span>
+              <strong>
+                Calle Blanco, 10 · Torrecera<br />
+                11595 Jerez de la Frontera · Cádiz · España
+              </strong>
+            </div>
+          </address>
         </div>
       </section>
 
-      <section className="proof-strip" aria-label="Princípios de atuação">
-        <p>Visão de ponta a ponta</p>
-        <p>Independência tecnológica</p>
-        <p>Execução + operação</p>
-        <p>Europa · Brasil · remoto</p>
-      </section>
-
-      <section className="section knowledge" id="conhecimento">
-        <div className="section-heading">
-          <p className="section-kicker">Mapa de conhecimento</p>
-          <h2>Da estratégia ao circuito.</h2>
-          <p>
-            A competência mais valiosa não é conhecer uma ferramenta isolada.
-            É saber como as peças influenciam umas às outras — e coordenar a
-            profundidade certa para cada projeto.
-          </p>
+      <section className="section legal" id="aviso-legal">
+        <div className="section-label">
+          <p>Aviso legal</p>
+          <span>04</span>
         </div>
-
-        <div className="knowledge-guide">
-          <span>{knowledgeDomains.length} territórios conectados</span>
-          <span>Abra cada campo para ver o alcance</span>
-        </div>
-
-        <div className="knowledge-grid">
-          {knowledgeDomains.map((domain) => (
-            <details className="knowledge-card" id={`domain-${domain.code}`} key={domain.code}>
-              <summary>
-                <span className="domain-code">{domain.code}</span>
-                <span className="domain-title">{domain.title}</span>
-                <span className="domain-toggle" aria-hidden="true">
-                  +
-                </span>
-              </summary>
-              <div className="domain-content">
-                <p>{domain.intro}</p>
-                <ul>
-                  {domain.topics.map((topic) => (
-                    <li key={topic}>{topic}</li>
-                  ))}
-                </ul>
-              </div>
-            </details>
-          ))}
-        </div>
-
-        <p className="scope-note">
-          Este mapa descreve o território que a Cinteca pode liderar, executar
-          ou coordenar. A composição de especialistas e parceiros adapta-se à
-          escala, ao risco e à natureza de cada desafio.
-        </p>
-      </section>
-
-      <section className="section origin">
-        <div className="origin-statement">
-          <span className="signal-label">2003 → hoje</span>
-          <p>
-            Uma base construída entre engenharia elétrica, engenharia da
-            computação e investigação em processamento digital de sinais —
-            ampliada por décadas de sistemas reais, liderança tecnológica e
-            operação crítica.
-          </p>
-        </div>
-        <div className="origin-side">
-          <p>
-            A Cinteca não é um currículo em formato de site. É a síntese de uma
-            forma de trabalhar: compreender o sistema inteiro, dominar o que é
-            essencial e reunir a capacidade certa para entregar.
-          </p>
-        </div>
-      </section>
-
-      <section className="section method" id="metodo">
-        <div className="section-heading method-heading">
-          <p className="section-kicker">Como trabalhamos</p>
-          <h2>Responsabilidade por todo o ciclo.</h2>
-        </div>
-
-        <ol className="method-list">
-          {method.map((item, index) => (
-            <li key={item.verb}>
-              <span className="method-index">{String(index + 1).padStart(2, "0")}</span>
-              <h3>{item.verb}</h3>
-              <p>{item.text}</p>
-            </li>
-          ))}
-        </ol>
-
-        <div className="principles">
-          <article>
-            <span aria-hidden="true">↗</span>
-            <h3>Neutra por desenho</h3>
+        <div className="legal-content">
+          <div className="legal-intro">
+            <h2>Identificación del titular.</h2>
             <p>
-              A tecnologia serve ao problema. Fabricantes, clouds e stacks são
-              escolhidos por adequação, não por preferência automática.
+              Información facilitada de forma permanente, directa y gratuita de
+              conformidad con el artículo 10 de la Ley 34/2002, de Servicios de la
+              Sociedad de la Información y de Comercio Electrónico.
             </p>
-          </article>
-          <article>
-            <span aria-hidden="true">◎</span>
-            <h3>Operável desde o início</h3>
-            <p>
-              Segurança, custos, observabilidade, suporte e continuidade entram
-              na arquitetura — não depois dela.
-            </p>
-          </article>
-          <article>
-            <span aria-hidden="true">≈</span>
-            <h3>Profundidade coordenada</h3>
-            <p>
-              Competência própria onde importa, especialistas quando acrescentam
-              valor e uma visão única a ligar tudo.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section className="section projects" id="projetos">
-        <div className="section-heading projects-heading">
-          <p className="section-kicker">Ecossistema de projetos</p>
-          <h2>Ideias próprias. Contextos diversos.</h2>
-          <p>
-            Produtos, plataformas e presenças digitais que materializam esta
-            capacidade em diferentes setores e modelos de colaboração.
-          </p>
-        </div>
-
-        <div className="project-columns">
-          <div className="project-group owned">
-            <div className="project-group-heading">
-              <span>01</span>
-              <div>
-                <p>Proprietários</p>
-                <small>Marcas, produtos e tecnologia própria</small>
-              </div>
-            </div>
-            <div className="project-links">
-              {ownedProjects.map((project) => (
-                <a href={`https://${project}`} target="_blank" rel="noreferrer" key={project}>
-                  <span>{project}</span>
-                  <span aria-hidden="true">↗</span>
-                </a>
-              ))}
-            </div>
           </div>
 
-          <div className="project-group client">
-            <div className="project-group-heading">
-              <span>02</span>
-              <div>
-                <p>Projetos para terceiros</p>
-                <small>Colaborações e soluções desenvolvidas</small>
+          <dl className="legal-facts">
+            {companyFacts.map(([label, value]) => (
+              <div key={label}>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
               </div>
+            ))}
+            <div>
+              <dt>Correo electrónico</dt>
+              <dd><a href="mailto:adriano@cinteca.es">adriano@cinteca.es</a></dd>
             </div>
-            <div className="project-links">
-              {thirdPartyProjects.map((project) => (
-                <a href={`https://${project}`} target="_blank" rel="noreferrer" key={project}>
-                  <span>{project}</span>
-                  <span aria-hidden="true">↗</span>
-                </a>
-              ))}
+            <div>
+              <dt>Teléfono</dt>
+              <dd><a href="tel:+34665478150">+34 665 478 150</a></dd>
             </div>
+            <div>
+              <dt>Sitio web</dt>
+              <dd>https://cinteca.es</dd>
+            </div>
+          </dl>
+
+          <div className="legal-text">
+            <article>
+              <h3>Objeto y acceso</h3>
+              <p>
+                Este sitio presenta información corporativa sobre AD Caldas
+                Innotec, S.A., la marca Cinteca y sus productos. El acceso es libre
+                y gratuito. La información tiene carácter general y no constituye
+                una oferta contractual ni asesoramiento profesional.
+              </p>
+            </article>
+            <article>
+              <h3>Propiedad intelectual</h3>
+              <p>
+                Las marcas, denominaciones, textos y demás contenidos de este sitio
+                pertenecen a sus respectivos titulares. No se autoriza su uso de
+                forma que pueda inducir a confusión sobre su origen o titularidad.
+              </p>
+            </article>
+            <article>
+              <h3>Enlaces externos</h3>
+              <p>
+                Los enlaces a los sitios de los productos conducen a dominios
+                independientes, con sus propias condiciones y políticas. AD Caldas
+                Innotec, S.A. no controla contenidos de terceros enlazados desde
+                esos sitios.
+              </p>
+            </article>
+            <article>
+              <h3>Legislación aplicable</h3>
+              <p>
+                Este sitio se rige por la legislación española. Para cualquier
+                controversia serán competentes los juzgados y tribunales que
+                correspondan conforme a la normativa aplicable.
+              </p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section className="contact" id="contacto">
-        <div className="contact-copy">
-          <p className="section-kicker">Próximo sistema</p>
-          <h2>
-            Tem um desafio que não cabe numa única especialidade?
-          </h2>
+      <section className="section privacy" id="privacidad">
+        <div className="section-label">
+          <p>Privacidad</p>
+          <span>05</span>
         </div>
-        <div className="contact-action">
-          <p>
-            Conte-nos o contexto. Começamos pelas perguntas certas e desenhamos
-            o caminho a partir daí.
-          </p>
-          <a href="mailto:contacto@cinteca.es">
-            contacto@cinteca.es <span aria-hidden="true">↗</span>
-          </a>
+        <div className="privacy-content">
+          <div className="legal-intro">
+            <h2>Política de privacidad.</h2>
+            <p>
+              Este sitio no utiliza formularios, cuentas de usuario, cookies ni
+              herramientas de analítica o publicidad. La navegación por sí misma
+              no crea perfiles de usuario.
+            </p>
+          </div>
+
+          <div className="privacy-grid">
+            <article>
+              <span>Responsable</span>
+              <h3>AD Caldas Innotec, S.A.</h3>
+              <p>NIF A66316399. Domicilio y contacto indicados en el aviso legal.</p>
+            </article>
+            <article>
+              <span>Datos tratados</span>
+              <h3>Solo los que usted envíe.</h3>
+              <p>
+                Si escribe o llama, trataremos los datos de contacto y el contenido
+                que facilite voluntariamente.
+              </p>
+            </article>
+            <article>
+              <span>Finalidad y base jurídica</span>
+              <h3>Atender su comunicación.</h3>
+              <p>
+                Los datos se utilizan para responder consultas o gestionar medidas
+                precontractuales, sobre la base de su solicitud y del interés
+                legítimo en mantener comunicaciones profesionales.
+              </p>
+            </article>
+            <article>
+              <span>Conservación</span>
+              <h3>Durante el tiempo necesario.</h3>
+              <p>
+                Se conservarán mientras se atiende la comunicación y, después,
+                durante los plazos exigidos para cumplir obligaciones legales o
+                atender posibles responsabilidades.
+              </p>
+            </article>
+            <article>
+              <span>Destinatarios</span>
+              <h3>Sin venta ni cesión comercial.</h3>
+              <p>
+                No se comunican datos a terceros salvo obligación legal o
+                proveedores necesarios sujetos a las garantías correspondientes.
+              </p>
+            </article>
+            <article>
+              <span>Sus derechos</span>
+              <h3>Acceso, rectificación y control.</h3>
+              <p>
+                Puede solicitar acceso, rectificación, supresión, oposición,
+                limitación o portabilidad escribiendo a
+                <a href="mailto:adriano@cinteca.es"> adriano@cinteca.es</a>. También
+                puede reclamar ante la
+                <a href="https://www.aepd.es" target="_blank" rel="noreferrer"> AEPD</a>.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
       <footer>
-        <a className="brand footer-brand" href="#inicio" aria-label="Cinteca — voltar ao início">
-          <span className="brand-mark" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </span>
-          <span>cinteca</span>
-        </a>
-        <p>Engenharia aplicada · Software · Sistemas conectados</p>
-        <p>© {new Date().getFullYear()} Cinteca</p>
+        <div className="footer-main">
+          <a className="brand footer-brand" href="#inicio" aria-label="Cinteca — volver al inicio">
+            <span className="brand-mark" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+            </span>
+            <span>cinteca</span>
+          </a>
+          <p>
+            Marca tecnológica de <strong>AD Caldas Innotec, S.A.</strong>
+          </p>
+          <a href="mailto:adriano@cinteca.es">adriano@cinteca.es</a>
+        </div>
+        <div className="footer-bottom">
+          <p>© {new Date().getFullYear()} AD Caldas Innotec, S.A.</p>
+          <p>Este sitio no utiliza cookies, analytics ni formularios.</p>
+          <div>
+            <a href="#aviso-legal">Aviso legal</a>
+            <a href="#privacidad">Privacidad</a>
+          </div>
+        </div>
       </footer>
     </main>
   );

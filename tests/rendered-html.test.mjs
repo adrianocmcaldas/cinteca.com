@@ -22,28 +22,32 @@ async function render(pathname = "/") {
   );
 }
 
-test("renders the Cinteca home page and its capability map", async () => {
+test("renders the official company identity and product portfolio", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<html lang="pt">/i);
-  assert.match(html, /<title>Cinteca — Engenharia, software e sistemas conectados<\/title>/i);
-  assert.match(html, /Complexidade/);
-  assert.match(html, /12(?:<!-- -->)? territórios conectados/);
-  assert.match(html, /IA, dados e processamento de sinais/);
-  assert.match(html, /Automação industrial e residencial/);
-  assert.match(html, /contacto@cinteca\.es/);
-  assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
+  assert.match(html, /<html lang="es">/i);
+  assert.match(html, /<title>Cinteca · AD Caldas Innotec, S\.A\.<\/title>/i);
+  assert.match(html, /A66316399/);
+  assert.match(html, /CA-56553/);
+  assert.match(html, /LegalNeuron/);
+  assert.match(html, /NordixBIOS/);
+  assert.match(html, /NCS Engine/);
+  assert.match(html, /adriano@cinteca\.es/);
+  assert.match(html, /\+34 665 478 150/);
 });
 
-test("exposes structured discovery metadata", async () => {
+test("includes legal, privacy and machine-readable company information", async () => {
   const response = await render();
   const html = await response.text();
 
+  assert.match(html, /Aviso legal/);
+  assert.match(html, /Política de privacidad/);
+  assert.match(html, /no utiliza formularios, cuentas de usuario, cookies ni/i);
   assert.match(html, /application\/ld\+json/);
-  assert.match(html, /https:\/\/schema\.org/);
-  assert.match(html, /Engenharia de software/);
+  assert.match(html, /"legalName":"AD Caldas Innotec, S.A."/);
   assert.match(html, /rel="canonical" href="https:\/\/cinteca\.es"/i);
+  assert.doesNotMatch(html, /<form|google-analytics|googletagmanager|cookie banner/i);
 });
