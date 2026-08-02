@@ -37,3 +37,12 @@ test("every locale presents the company with global scope", () => {
   assert.match(translations.pt.status.join(" "), /Atuação global/);
   assert.match(translations.nb.status.join(" "), /Globalt virkeområde/);
 });
+
+test("every locale describes the protected contact channel", () => {
+  for (const locale of ["pt", "en", "es", "nb"]) {
+    const copy = translations[locale];
+    assert.ok(copy.contact.protectedLabel.length > 0, `${locale} protection label`);
+    assert.ok(copy.contact.privacyAcknowledgement.length > 0, `${locale} privacy notice`);
+    assert.match(copy.privacy.intro, /Turnstile/i, `${locale} Turnstile disclosure`);
+  }
+});

@@ -35,8 +35,9 @@ test("renders the official company identity and product portfolio", async () => 
   assert.match(html, /LegalNeuron/);
   assert.match(html, /NordixBIOS/);
   assert.match(html, /NCS Engine/);
-  assert.match(html, /adriano@cinteca\.es/);
-  assert.match(html, /\+34 665 478 150/);
+  assert.doesNotMatch(html, /adriano@cinteca\.es/);
+  assert.doesNotMatch(html, /\+34 665 478 150/);
+  assert.doesNotMatch(html, /href="(?:mailto|tel):/i);
   assert.match(html, /Corporate relationship/);
   assert.match(html, /Cinteca.*technology brand.*AD Caldas Innotec, S\.A\./s);
   assert.match(html, /Tax ID A66316399/);
@@ -69,7 +70,10 @@ test("includes legal, privacy and machine-readable company information", async (
 
   assert.match(html, /Legal notice/);
   assert.match(html, /Privacy policy/);
-  assert.match(html, /does not use forms, user accounts, cookies/i);
+  assert.match(html, /uses AWS infrastructure, SMTP delivery and Cloudflare Turnstile/i);
+  assert.match(html, /<form/i);
+  assert.match(html, /name="message"/i);
+  assert.match(html, /Protected contact form available on this website/i);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /"legalName":"AD Caldas Innotec, S.A."/);
   assert.match(html, /"alternateName":"Cinteca"/);
@@ -77,5 +81,5 @@ test("includes legal, privacy and machine-readable company information", async (
   assert.match(html, /"areaServed":"Worldwide"/);
   assert.match(html, /"knowsAbout":\[/);
   assert.match(html, /rel="canonical" href="https:\/\/cinteca\.es"/i);
-  assert.doesNotMatch(html, /<form|google-analytics|googletagmanager|cookie banner/i);
+  assert.doesNotMatch(html, /"telephone"|google-analytics|googletagmanager|cookie banner/i);
 });

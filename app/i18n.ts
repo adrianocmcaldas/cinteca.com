@@ -55,6 +55,7 @@ export type SiteCopy = {
     taxId: string;
     registry: string;
     contact: string;
+    contactValue: string;
     completeIdentity: string;
   };
   status: string[];
@@ -90,9 +91,22 @@ export type SiteCopy = {
     label: string;
     title: string;
     intro: string;
+    protectedLabel: string;
+    name: string;
     email: string;
-    phone: string;
-    address: string;
+    company: string;
+    optional: string;
+    subject: string;
+    message: string;
+    privacyAcknowledgement: string;
+    privacyLink: string;
+    verification: string;
+    send: string;
+    sending: string;
+    success: string;
+    error: string;
+    turnstileError: string;
+    configurationError: string;
   };
   legal: {
     label: string;
@@ -100,7 +114,8 @@ export type SiteCopy = {
     intro: string;
     facts: [string, string][];
     email: string;
-    phone: string;
+    contactChannel: string;
+    contactChannelValue: string;
     website: string;
     articles: LegalArticle[];
   };
@@ -113,6 +128,7 @@ export type SiteCopy = {
   footer: {
     brandRelation: string;
     noTracking: string;
+    contact: string;
     legal: string;
     privacy: string;
   };
@@ -700,9 +716,10 @@ export const translations: Record<Locale, SiteCopy> = {
       taxId: "Tax ID",
       registry: "Registry",
       contact: "Contact",
+      contactValue: "Protected channel",
       completeIdentity: "View complete company details",
     },
-    status: ["Active company", "Technology activity since 2014", "Global scope · International projects", "No cookies or tracking"],
+    status: ["Active company", "Technology activity since 2014", "Global scope · International projects", "No advertising analytics"],
     company: {
       label: "The company",
       title: "One company. Distinct technology products.",
@@ -743,14 +760,35 @@ export const translations: Record<Locale, SiteCopy> = {
         { name: "NCS Engine", code: "AI INFRASTRUCTURE", url: productUrls.ncsEngine, description: "Secure infrastructure for deploying and operating artificial intelligence in cloud, local and hybrid environments." },
       ],
     },
-    contact: { label: "Contact", title: "Direct contact.", intro: "We do not use forms. You can contact the company by email or telephone.", email: "Email", phone: "Telephone", address: "Registered office" },
+    contact: {
+      label: "Contact",
+      title: "Protected contact.",
+      intro: "Send your enquiry through this protected channel. Your email address and our destination mailbox are never published on the website.",
+      protectedLabel: "Protected by Cloudflare Turnstile",
+      name: "Name",
+      email: "Your email",
+      company: "Company",
+      optional: "Optional",
+      subject: "Subject",
+      message: "Message",
+      privacyAcknowledgement: "I have read the privacy information for this contact channel.",
+      privacyLink: "View privacy policy",
+      verification: "Human verification",
+      send: "Send securely",
+      sending: "Sending…",
+      success: "Your message has been sent securely. We will reply by email.",
+      error: "The message could not be sent. Please review the fields and try again.",
+      turnstileError: "Human verification expired or failed. Please try again.",
+      configurationError: "The protected contact channel is not yet configured.",
+    },
     legal: {
       label: "Legal notice",
       title: "Website owner details.",
       intro: "Information provided permanently, directly and free of charge in accordance with Article 10 of Spanish Law 34/2002 on Information Society Services and Electronic Commerce.",
       facts: [["Legal name", "AD Caldas Innotec, S.A."], ["Tax ID", "A66316399"], ["Corporate relationship", "Cinteca is the technology brand of AD Caldas Innotec, S.A., the entity that owns this website and is responsible for its corporate activity."], ["Registered office", address], ["Commercial Registry", registry]],
       email: "Email",
-      phone: "Telephone",
+      contactChannel: "Electronic contact",
+      contactChannelValue: "Protected contact form available on this website",
       website: "Website",
       articles: [
         { title: "Purpose and access", body: "This website presents corporate information about AD Caldas Innotec, S.A., the Cinteca brand and its products. Access is open and free of charge. The information is general and does not constitute a contractual offer or professional advice." },
@@ -762,17 +800,17 @@ export const translations: Record<Locale, SiteCopy> = {
     privacy: {
       label: "Privacy",
       title: "Privacy policy.",
-      intro: "This website does not use forms, user accounts, cookies, analytics or advertising tools. Browsing alone does not create user profiles.",
+      intro: "This website uses no advertising or audience analytics. The contact form uses AWS infrastructure, SMTP delivery and Cloudflare Turnstile solely to receive enquiries and prevent abuse.",
       items: [
         { label: "Controller", title: "AD Caldas Innotec, S.A.", body: "Tax ID A66316399. Registered office and contact details are provided in the legal notice." },
-        { label: "Data processed", title: "Only what you send.", body: "If you write or call us, we will process the contact details and content that you voluntarily provide." },
+        { label: "Data processed", title: "Only what is needed to respond.", body: "We process the name, email, company, subject and message you submit, together with limited technical data needed for Turnstile verification and service security." },
         { label: "Purpose and legal basis", title: "To respond to your communication.", body: "Data is used to answer enquiries or manage pre-contractual steps, based on your request and the legitimate interest in maintaining professional communications." },
         { label: "Retention", title: "For as long as necessary.", body: "Data will be retained while the communication is handled and afterwards for the periods required to meet legal obligations or possible liabilities." },
-        { label: "Recipients", title: "No sale or commercial transfer.", body: "Data is not disclosed to third parties except where legally required or to necessary providers subject to appropriate safeguards." },
-        { label: "Your rights", title: "Access, correction and control.", body: "You may request access, correction, deletion, objection, restriction or portability by emailing us. You may also lodge a complaint with the Spanish Data Protection Agency (AEPD)." },
+        { label: "Recipients", title: "No sale or commercial transfer.", body: "AWS, the configured email provider and Cloudflare Turnstile may process the data strictly as necessary service providers, subject to the corresponding safeguards." },
+        { label: "Your rights", title: "Access, correction and control.", body: "You may request access, correction, deletion, objection, restriction or portability through the protected contact form. You may also lodge a complaint with the Spanish Data Protection Agency (AEPD)." },
       ],
     },
-    footer: { brandRelation: "Technology brand of AD Caldas Innotec, S.A.", noTracking: "This website uses no cookies, analytics or forms.", legal: "Legal notice", privacy: "Privacy" },
+    footer: { brandRelation: "Technology brand of AD Caldas Innotec, S.A.", noTracking: "No advertising or audience analytics.", contact: "Protected contact", legal: "Legal notice", privacy: "Privacy" },
   },
   es: {
     localeName: "Español",
@@ -782,8 +820,8 @@ export const translations: Record<Locale, SiteCopy> = {
     navigationLabel: "Navegación principal",
     menuLabel: "Menú",
     nav: { company: "Empresa", capabilities: "Capacidades", products: "Productos", contact: "Contacto", legal: "Aviso legal", privacy: "Privacidad" },
-    hero: { eyebrow: "Sitio corporativo oficial", title: "Tecnología aplicada, construida para operar.", intro: "Cinteca es la marca tecnológica de AD Caldas Innotec, S.A. La compañía desarrolla y gestiona productos de software, inteligencia artificial e infraestructura digital para profesionales y empresas.", entity: "Entidad mercantil española", companyName: "Razón social", taxId: "NIF", registry: "Registro", contact: "Contacto", completeIdentity: "Ver identificación completa" },
-    status: ["Empresa activa", "Actividad tecnológica desde 2014", "Alcance global · Proyectos internacionales", "Sin cookies ni seguimiento"],
+    hero: { eyebrow: "Sitio corporativo oficial", title: "Tecnología aplicada, construida para operar.", intro: "Cinteca es la marca tecnológica de AD Caldas Innotec, S.A. La compañía desarrolla y gestiona productos de software, inteligencia artificial e infraestructura digital para profesionales y empresas.", entity: "Entidad mercantil española", companyName: "Razón social", taxId: "NIF", registry: "Registro", contact: "Contacto", contactValue: "Canal protegido", completeIdentity: "Ver identificación completa" },
+    status: ["Empresa activa", "Actividad tecnológica desde 2014", "Alcance global · Proyectos internacionales", "Sin analítica publicitaria"],
     company: {
       label: "La empresa", title: "Una entidad. Distintos productos tecnológicos.",
       paragraphs: ["AD Caldas Innotec, S.A. es una sociedad mercantil española dedicada a la prestación de servicios relacionados con las tecnologías de la información y la comunicación, incluyendo la creación, el desarrollo y la gestión de recursos web y aplicaciones de software.", "Cinteca identifica el núcleo tecnológico y corporativo del grupo. Bajo este marco se impulsan productos y marcas con identidad propia para ámbitos jurídicos, empresariales y de infraestructura. Esta estructura explica que el dominio corporativo y los productos anunciados puedan utilizar nombres diferentes sin dejar de formar parte del mismo ecosistema empresarial. Los proyectos ya se extienden a distintos países y los productos existentes están concebidos para una expansión global progresiva."],
@@ -792,14 +830,14 @@ export const translations: Record<Locale, SiteCopy> = {
     },
     capabilities: { label: "Capacidades", title: "Know-how completo, sin convertirlo en un currículum.", intro: "El mapa distingue la experiencia directamente consolidada de las disciplinas adyacentes que pueden ser dirigidas, integradas o administradas con especialistas según el alcance del proyecto.", direct: "Conocimiento directo", adjacent: "Dirección e integración", domains: "dominios", topics: "capacidades", topicCount: "temas", note: "“Dirección e integración” no pretende atribuir dominio individual de cada especialidad: identifica ámbitos que Cinteca puede evaluar, contratar, coordinar y gobernar con responsabilidad técnica.", items: esCapabilities },
     products: { label: "Productos", title: "Productos con identidad propia.", intro: "Cada producto responde a un contexto específico y dispone de su propio dominio, comunicación y propuesta de valor.", items: [{ name: "LegalNeuron", code: "LEGAL AI", url: productUrls.legalNeuron, description: "Software de inteligencia artificial y gestión para profesionales del derecho y despachos. Facilita el análisis, la revisión y la automatización de documentos y procesos jurídicos." }, { name: "NordixBIOS", code: "EMBEDDED AI", url: productUrls.nordixBios, description: "Asistente de inteligencia artificial de marca blanca que se integra en software existente, ejecuta operaciones y acompaña la evolución del producto." }, { name: "NCS Engine", code: "AI INFRASTRUCTURE", url: productUrls.ncsEngine, description: "Infraestructura segura para desplegar y operar inteligencia artificial en entornos cloud, locales e híbridos." }] },
-    contact: { label: "Contacto", title: "Contacto directo.", intro: "No utilizamos formularios. Puede contactar con la empresa por correo electrónico o teléfono.", email: "Correo electrónico", phone: "Teléfono", address: "Domicilio social" },
+    contact: { label: "Contacto", title: "Contacto protegido.", intro: "Envíe su consulta mediante este canal protegido. Su dirección de correo y nuestro buzón de destino no se publican en el sitio.", protectedLabel: "Protegido por Cloudflare Turnstile", name: "Nombre", email: "Su correo electrónico", company: "Empresa", optional: "Opcional", subject: "Asunto", message: "Mensaje", privacyAcknowledgement: "He leído la información de privacidad de este canal de contacto.", privacyLink: "Ver política de privacidad", verification: "Verificación humana", send: "Enviar de forma segura", sending: "Enviando…", success: "Su mensaje se ha enviado de forma segura. Responderemos por correo electrónico.", error: "No se ha podido enviar el mensaje. Revise los campos e inténtelo de nuevo.", turnstileError: "La verificación humana ha caducado o ha fallado. Inténtelo de nuevo.", configurationError: "El canal de contacto protegido todavía no está configurado." },
     legal: {
       label: "Aviso legal", title: "Identificación del titular.", intro: "Información facilitada de forma permanente, directa y gratuita de conformidad con el artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico.",
-      facts: [["Denominación social", "AD Caldas Innotec, S.A."], ["NIF", "A66316399"], ["Vinculación societaria", "Cinteca es la marca tecnológica de AD Caldas Innotec, S.A., entidad titular del sitio y responsable de su actividad corporativa."], ["Domicilio social", address], ["Registro Mercantil", registry]], email: "Correo electrónico", phone: "Teléfono", website: "Sitio web",
+      facts: [["Denominación social", "AD Caldas Innotec, S.A."], ["NIF", "A66316399"], ["Vinculación societaria", "Cinteca es la marca tecnológica de AD Caldas Innotec, S.A., entidad titular del sitio y responsable de su actividad corporativa."], ["Domicilio social", address], ["Registro Mercantil", registry]], email: "Correo electrónico", contactChannel: "Contacto electrónico", contactChannelValue: "Formulario de contacto protegido disponible en este sitio", website: "Sitio web",
       articles: [{ title: "Objeto y acceso", body: "Este sitio presenta información corporativa sobre AD Caldas Innotec, S.A., la marca Cinteca y sus productos. El acceso es libre y gratuito. La información tiene carácter general y no constituye una oferta contractual ni asesoramiento profesional." }, { title: "Propiedad intelectual", body: "Las marcas, denominaciones, textos y demás contenidos de este sitio pertenecen a sus respectivos titulares. No se autoriza su uso de forma que pueda inducir a confusión sobre su origen o titularidad." }, { title: "Enlaces externos", body: "Los enlaces a los sitios de los productos conducen a dominios independientes, con sus propias condiciones y políticas. AD Caldas Innotec, S.A. no controla contenidos de terceros enlazados desde esos sitios." }, { title: "Legislación aplicable", body: "Este sitio se rige por la legislación española. Para cualquier controversia serán competentes los juzgados y tribunales que correspondan conforme a la normativa aplicable." }],
     },
-    privacy: { label: "Privacidad", title: "Política de privacidad.", intro: "Este sitio no utiliza formularios, cuentas de usuario, cookies ni herramientas de analítica o publicidad. La navegación por sí misma no crea perfiles de usuario.", items: [{ label: "Responsable", title: "AD Caldas Innotec, S.A.", body: "NIF A66316399. Domicilio y contacto indicados en el aviso legal." }, { label: "Datos tratados", title: "Solo los que usted envíe.", body: "Si escribe o llama, trataremos los datos de contacto y el contenido que facilite voluntariamente." }, { label: "Finalidad y base jurídica", title: "Atender su comunicación.", body: "Los datos se utilizan para responder consultas o gestionar medidas precontractuales, sobre la base de su solicitud y del interés legítimo en mantener comunicaciones profesionales." }, { label: "Conservación", title: "Durante el tiempo necesario.", body: "Se conservarán mientras se atiende la comunicación y, después, durante los plazos exigidos para cumplir obligaciones legales o atender posibles responsabilidades." }, { label: "Destinatarios", title: "Sin venta ni cesión comercial.", body: "No se comunican datos a terceros salvo obligación legal o proveedores necesarios sujetos a las garantías correspondientes." }, { label: "Sus derechos", title: "Acceso, rectificación y control.", body: "Puede solicitar acceso, rectificación, supresión, oposición, limitación o portabilidad por correo electrónico. También puede reclamar ante la Agencia Española de Protección de Datos (AEPD)." }] },
-    footer: { brandRelation: "Marca tecnológica de AD Caldas Innotec, S.A.", noTracking: "Este sitio no utiliza cookies, analytics ni formularios.", legal: "Aviso legal", privacy: "Privacidad" },
+    privacy: { label: "Privacidad", title: "Política de privacidad.", intro: "Este sitio no utiliza analítica publicitaria ni de audiencia. El formulario de contacto utiliza infraestructura de AWS, entrega SMTP y Cloudflare Turnstile exclusivamente para recibir consultas y prevenir abusos.", items: [{ label: "Responsable", title: "AD Caldas Innotec, S.A.", body: "NIF A66316399. Domicilio y contacto indicados en el aviso legal." }, { label: "Datos tratados", title: "Solo lo necesario para responder.", body: "Tratamos el nombre, correo, empresa, asunto y mensaje que envíe, junto con datos técnicos limitados necesarios para la verificación Turnstile y la seguridad del servicio." }, { label: "Finalidad y base jurídica", title: "Atender su comunicación.", body: "Los datos se utilizan para responder consultas o gestionar medidas precontractuales, sobre la base de su solicitud y del interés legítimo en mantener comunicaciones profesionales." }, { label: "Conservación", title: "Durante el tiempo necesario.", body: "Se conservarán mientras se atiende la comunicación y, después, durante los plazos exigidos para cumplir obligaciones legales o atender posibles responsabilidades." }, { label: "Destinatarios", title: "Sin venta ni cesión comercial.", body: "AWS, el proveedor de correo configurado y Cloudflare Turnstile pueden tratar los datos únicamente como proveedores necesarios y con las garantías correspondientes." }, { label: "Sus derechos", title: "Acceso, rectificación y control.", body: "Puede solicitar acceso, rectificación, supresión, oposición, limitación o portabilidad mediante el formulario protegido. También puede reclamar ante la Agencia Española de Protección de Datos (AEPD)." }] },
+    footer: { brandRelation: "Marca tecnológica de AD Caldas Innotec, S.A.", noTracking: "Sin analítica publicitaria ni de audiencia.", contact: "Contacto protegido", legal: "Aviso legal", privacy: "Privacidad" },
   },
   pt: {
     localeName: "Português",
@@ -809,8 +847,8 @@ export const translations: Record<Locale, SiteCopy> = {
     navigationLabel: "Navegação principal",
     menuLabel: "Menu",
     nav: { company: "Empresa", capabilities: "Competências", products: "Produtos", contact: "Contato", legal: "Aviso legal", privacy: "Privacidade" },
-    hero: { eyebrow: "Site corporativo oficial", title: "Tecnologia aplicada, construída para operar.", intro: "Cinteca é a marca tecnológica da AD Caldas Innotec, S.A. A empresa desenvolve e gerencia produtos de software, inteligência artificial e infraestrutura digital para profissionais e organizações.", entity: "Sociedade mercantil espanhola", companyName: "Razão social", taxId: "NIF", registry: "Registro", contact: "Contato", completeIdentity: "Ver identificação completa" },
-    status: ["Empresa ativa", "Atividade tecnológica desde 2014", "Atuação global · Projetos internacionais", "Sem cookies ou rastreamento"],
+    hero: { eyebrow: "Site corporativo oficial", title: "Tecnologia aplicada, construída para operar.", intro: "Cinteca é a marca tecnológica da AD Caldas Innotec, S.A. A empresa desenvolve e gerencia produtos de software, inteligência artificial e infraestrutura digital para profissionais e organizações.", entity: "Sociedade mercantil espanhola", companyName: "Razão social", taxId: "NIF", registry: "Registro", contact: "Contato", contactValue: "Canal protegido", completeIdentity: "Ver identificação completa" },
+    status: ["Empresa ativa", "Atividade tecnológica desde 2014", "Atuação global · Projetos internacionais", "Sem analytics de publicidade"],
     company: {
       label: "A empresa", title: "Uma entidade. Diferentes produtos tecnológicos.",
       paragraphs: ["AD Caldas Innotec, S.A. é uma sociedade mercantil espanhola dedicada à prestação de serviços relacionados às tecnologias da informação e comunicação, incluindo a criação, o desenvolvimento e a gestão de recursos web e aplicações de software.", "Cinteca identifica o núcleo tecnológico e corporativo do grupo. Sob essa estrutura são desenvolvidos produtos e marcas com identidade própria para os setores jurídico, empresarial e de infraestrutura. Isso explica por que o domínio corporativo e os produtos anunciados podem usar nomes diferentes e ainda fazer parte do mesmo ecossistema empresarial. Os projetos já abrangem diferentes países, e os produtos existentes são concebidos para uma expansão global progressiva."],
@@ -819,14 +857,14 @@ export const translations: Record<Locale, SiteCopy> = {
     },
     capabilities: { label: "Competências", title: "Know-how completo, sem transformar a página em um currículo.", intro: "O mapa separa a experiência diretamente consolidada das disciplinas relacionadas que podem ser dirigidas, integradas ou administradas com especialistas conforme o escopo de cada projeto.", direct: "Conhecimento direto", adjacent: "Direção e integração", domains: "domínios", topics: "competências", topicCount: "temas", note: "“Direção e integração” não pretende atribuir domínio individual de cada especialidade. Identifica áreas que a Cinteca pode avaliar, contratar, coordenar e governar com responsabilidade técnica.", items: ptCapabilities },
     products: { label: "Produtos", title: "Produtos com identidade própria.", intro: "Cada produto responde a um contexto específico e possui domínio, comunicação e proposta de valor próprios.", items: [{ name: "LegalNeuron", code: "LEGAL AI", url: productUrls.legalNeuron, description: "Software de inteligência artificial e gestão para profissionais do direito e escritórios. Facilita a análise, revisão e automação de documentos e processos jurídicos." }, { name: "NordixBIOS", code: "EMBEDDED AI", url: productUrls.nordixBios, description: "Assistente de inteligência artificial white label que se integra a softwares existentes, executa operações e acompanha a evolução do produto." }, { name: "NCS Engine", code: "AI INFRASTRUCTURE", url: productUrls.ncsEngine, description: "Infraestrutura segura para implantar e operar inteligência artificial em ambientes cloud, locais e híbridos." }] },
-    contact: { label: "Contato", title: "Contato direto.", intro: "Não utilizamos formulários. Você pode entrar em contato com a empresa por e-mail ou telefone.", email: "E-mail", phone: "Telefone", address: "Sede social" },
+    contact: { label: "Contato", title: "Contato protegido.", intro: "Envie sua consulta por este canal protegido. Seu e-mail e nossa caixa de destino nunca são publicados no site.", protectedLabel: "Protegido por Cloudflare Turnstile", name: "Nome", email: "Seu e-mail", company: "Empresa", optional: "Opcional", subject: "Assunto", message: "Mensagem", privacyAcknowledgement: "Li as informações de privacidade deste canal de contato.", privacyLink: "Ver política de privacidade", verification: "Verificação humana", send: "Enviar com segurança", sending: "Enviando…", success: "Sua mensagem foi enviada com segurança. Responderemos por e-mail.", error: "Não foi possível enviar a mensagem. Revise os campos e tente novamente.", turnstileError: "A verificação humana expirou ou falhou. Tente novamente.", configurationError: "O canal de contato protegido ainda não está configurado." },
     legal: {
       label: "Aviso legal", title: "Identificação do titular.", intro: "Informação disponibilizada de forma permanente, direta e gratuita em conformidade com o artigo 10 da Lei espanhola 34/2002, de Serviços da Sociedade da Informação e Comércio Eletrônico.",
-      facts: [["Razão social", "AD Caldas Innotec, S.A."], ["NIF", "A66316399"], ["Vínculo societário", "Cinteca é a marca tecnológica da AD Caldas Innotec, S.A., entidade titular do site e responsável por sua atividade corporativa."], ["Sede social", address], ["Registro Mercantil", registry]], email: "E-mail", phone: "Telefone", website: "Site",
+      facts: [["Razão social", "AD Caldas Innotec, S.A."], ["NIF", "A66316399"], ["Vínculo societário", "Cinteca é a marca tecnológica da AD Caldas Innotec, S.A., entidade titular do site e responsável por sua atividade corporativa."], ["Sede social", address], ["Registro Mercantil", registry]], email: "E-mail", contactChannel: "Contato eletrônico", contactChannelValue: "Formulário de contato protegido disponível neste site", website: "Site",
       articles: [{ title: "Objeto e acesso", body: "Este site apresenta informações corporativas sobre a AD Caldas Innotec, S.A., a marca Cinteca e seus produtos. O acesso é livre e gratuito. As informações são gerais e não constituem oferta contratual nem aconselhamento profissional." }, { title: "Propriedade intelectual", body: "As marcas, denominações, textos e demais conteúdos deste site pertencem aos seus respectivos titulares. Não é autorizado seu uso de forma que possa causar confusão sobre sua origem ou titularidade." }, { title: "Links externos", body: "Os links para os sites dos produtos levam a domínios independentes, com seus próprios termos e políticas. A AD Caldas Innotec, S.A. não controla conteúdos de terceiros vinculados a partir desses sites." }, { title: "Legislação aplicável", body: "Este site é regido pela legislação espanhola. Qualquer controvérsia será submetida aos tribunais competentes conforme a regulamentação aplicável." }],
     },
-    privacy: { label: "Privacidade", title: "Política de privacidade.", intro: "Este site não utiliza formulários, contas de usuário, cookies nem ferramentas de análise ou publicidade. A navegação, por si só, não cria perfis de usuário.", items: [{ label: "Responsável", title: "AD Caldas Innotec, S.A.", body: "NIF A66316399. Sede e contatos indicados no aviso legal." }, { label: "Dados tratados", title: "Somente os que você enviar.", body: "Se você escrever ou ligar, trataremos os dados de contato e o conteúdo fornecido voluntariamente." }, { label: "Finalidade e base jurídica", title: "Atender à sua comunicação.", body: "Os dados são utilizados para responder consultas ou administrar medidas pré-contratuais, com base em sua solicitação e no interesse legítimo de manter comunicações profissionais." }, { label: "Conservação", title: "Durante o tempo necessário.", body: "Os dados serão conservados enquanto a comunicação for atendida e, depois, pelos prazos exigidos para cumprir obrigações legais ou possíveis responsabilidades." }, { label: "Destinatários", title: "Sem venda ou cessão comercial.", body: "Os dados não são comunicados a terceiros, salvo obrigação legal ou fornecedores necessários sujeitos às garantias correspondentes." }, { label: "Seus direitos", title: "Acesso, retificação e controle.", body: "Você pode solicitar acesso, retificação, exclusão, oposição, limitação ou portabilidade por e-mail. Também pode reclamar perante a Agência Espanhola de Proteção de Dados (AEPD)." }] },
-    footer: { brandRelation: "Marca tecnológica da AD Caldas Innotec, S.A.", noTracking: "Este site não utiliza cookies, analytics nem formulários.", legal: "Aviso legal", privacy: "Privacidade" },
+    privacy: { label: "Privacidade", title: "Política de privacidade.", intro: "Este site não utiliza analytics de publicidade ou audiência. O formulário de contato utiliza infraestrutura AWS, entrega SMTP e Cloudflare Turnstile exclusivamente para receber consultas e prevenir abusos.", items: [{ label: "Responsável", title: "AD Caldas Innotec, S.A.", body: "NIF A66316399. Sede e contato indicados no aviso legal." }, { label: "Dados tratados", title: "Somente o necessário para responder.", body: "Tratamos o nome, e-mail, empresa, assunto e mensagem enviados, além de dados técnicos limitados necessários para a verificação Turnstile e a segurança do serviço." }, { label: "Finalidade e base jurídica", title: "Atender à sua comunicação.", body: "Os dados são utilizados para responder consultas ou administrar medidas pré-contratuais, com base em sua solicitação e no interesse legítimo de manter comunicações profissionais." }, { label: "Conservação", title: "Durante o tempo necessário.", body: "Os dados serão conservados enquanto a comunicação for atendida e, depois, pelos prazos exigidos para cumprir obrigações legais ou possíveis responsabilidades." }, { label: "Destinatários", title: "Sem venda ou cessão comercial.", body: "AWS, o provedor de e-mail configurado e o Cloudflare Turnstile podem tratar os dados somente como fornecedores necessários e sujeitos às garantias correspondentes." }, { label: "Seus direitos", title: "Acesso, retificação e controle.", body: "Você pode solicitar acesso, retificação, exclusão, oposição, limitação ou portabilidade pelo formulário protegido. Também pode reclamar perante a Agência Espanhola de Proteção de Dados (AEPD)." }] },
+    footer: { brandRelation: "Marca tecnológica da AD Caldas Innotec, S.A.", noTracking: "Sem analytics de publicidade ou audiência.", contact: "Contato protegido", legal: "Aviso legal", privacy: "Privacidade" },
   },
   nb: {
     localeName: "Norsk bokmål",
@@ -836,8 +874,8 @@ export const translations: Record<Locale, SiteCopy> = {
     navigationLabel: "Hovednavigasjon",
     menuLabel: "Meny",
     nav: { company: "Selskapet", capabilities: "Kompetanse", products: "Produkter", contact: "Kontakt", legal: "Juridisk informasjon", privacy: "Personvern" },
-    hero: { eyebrow: "Offisielt firmanettsted", title: "Anvendt teknologi, bygget for drift.", intro: "Cinteca er teknologimerket til AD Caldas Innotec, S.A. Selskapet utvikler og forvalter programvareprodukter, kunstig intelligens og digital infrastruktur for fagpersoner og virksomheter.", entity: "Spansk aksjeselskap", companyName: "Juridisk navn", taxId: "Skatte-ID", registry: "Register", contact: "Kontakt", completeIdentity: "Se fullstendige selskapsopplysninger" },
-    status: ["Aktivt selskap", "Teknologivirksomhet siden 2014", "Globalt virkeområde · Internasjonale prosjekter", "Ingen informasjonskapsler eller sporing"],
+    hero: { eyebrow: "Offisielt firmanettsted", title: "Anvendt teknologi, bygget for drift.", intro: "Cinteca er teknologimerket til AD Caldas Innotec, S.A. Selskapet utvikler og forvalter programvareprodukter, kunstig intelligens og digital infrastruktur for fagpersoner og virksomheter.", entity: "Spansk aksjeselskap", companyName: "Juridisk navn", taxId: "Skatte-ID", registry: "Register", contact: "Kontakt", contactValue: "Beskyttet kanal", completeIdentity: "Se fullstendige selskapsopplysninger" },
+    status: ["Aktivt selskap", "Teknologivirksomhet siden 2014", "Globalt virkeområde · Internasjonale prosjekter", "Ingen annonseanalyse"],
     company: {
       label: "Selskapet", title: "Ett selskap. Ulike teknologiprodukter.",
       paragraphs: ["AD Caldas Innotec, S.A. er et spansk aksjeselskap som leverer tjenester innen informasjons- og kommunikasjonsteknologi, inkludert utvikling og forvaltning av nettressurser og programvareapplikasjoner.", "Cinteca representerer konsernets teknologiske og selskapsmessige kjerne. Innenfor denne rammen utvikles produkter og merkevarer med egen identitet for juridiske, forretningsmessige og infrastrukturelle områder. Dette forklarer hvorfor selskapsdomenet og produktene kan ha ulike navn og fortsatt tilhøre samme virksomhetsøkosystem. Prosjektene omfatter allerede flere land, og de eksisterende produktene er utviklet med sikte på gradvis global ekspansjon."],
@@ -846,14 +884,14 @@ export const translations: Record<Locale, SiteCopy> = {
     },
     capabilities: { label: "Kompetanse", title: "Komplett know-how, uten å gjøre siden til en CV.", intro: "Oversikten skiller mellom direkte etablert erfaring og tilgrensende fagområder som kan ledes, integreres eller administreres sammen med spesialister ut fra prosjektets omfang.", direct: "Direkte kunnskap", adjacent: "Ledelse og integrasjon", domains: "domener", topics: "kompetanseområder", topicCount: "temaer", note: "«Ledelse og integrasjon» innebærer ikke påstand om individuell ekspertise i alle fagområder. Det viser områder Cinteca kan vurdere, kontrahere, koordinere og styre med teknisk ansvar.", items: nbCapabilities },
     products: { label: "Produkter", title: "Produkter med egen identitet.", intro: "Hvert produkt dekker en bestemt kontekst og har eget domene, kommunikasjon og verdiforslag.", items: [{ name: "LegalNeuron", code: "LEGAL AI", url: productUrls.legalNeuron, description: "Programvare for kunstig intelligens og administrasjon for jurister og advokatfirmaer. Den støtter analyse, gjennomgang og automatisering av juridiske dokumenter og prosesser." }, { name: "NordixBIOS", code: "EMBEDDED AI", url: productUrls.nordixBios, description: "En white-label KI-assistent som integreres i eksisterende programvare, utfører operasjoner og støtter produktets videre utvikling." }, { name: "NCS Engine", code: "AI INFRASTRUCTURE", url: productUrls.ncsEngine, description: "Sikker infrastruktur for utrulling og drift av kunstig intelligens i skybaserte, lokale og hybride miljøer." }] },
-    contact: { label: "Kontakt", title: "Direkte kontakt.", intro: "Vi bruker ikke skjemaer. Du kan kontakte selskapet på e-post eller telefon.", email: "E-post", phone: "Telefon", address: "Forretningsadresse" },
+    contact: { label: "Kontakt", title: "Beskyttet kontakt.", intro: "Send henvendelsen gjennom denne beskyttede kanalen. Din e-postadresse og vår mottakeradresse publiseres aldri på nettstedet.", protectedLabel: "Beskyttet av Cloudflare Turnstile", name: "Navn", email: "Din e-post", company: "Selskap", optional: "Valgfritt", subject: "Emne", message: "Melding", privacyAcknowledgement: "Jeg har lest personverninformasjonen for denne kontaktkanalen.", privacyLink: "Se personvernerklæringen", verification: "Menneskelig verifisering", send: "Send sikkert", sending: "Sender…", success: "Meldingen er sendt sikkert. Vi svarer på e-post.", error: "Meldingen kunne ikke sendes. Kontroller feltene og prøv igjen.", turnstileError: "Den menneskelige verifiseringen utløp eller mislyktes. Prøv igjen.", configurationError: "Den beskyttede kontaktkanalen er ennå ikke konfigurert." },
     legal: {
       label: "Juridisk informasjon", title: "Opplysninger om nettstedets eier.", intro: "Informasjonen gis permanent, direkte og kostnadsfritt i samsvar med artikkel 10 i den spanske loven 34/2002 om informasjonssamfunnstjenester og elektronisk handel.",
-      facts: [["Juridisk navn", "AD Caldas Innotec, S.A."], ["Skatte-ID", "A66316399"], ["Selskapsforbindelse", "Cinteca er teknologimerket til AD Caldas Innotec, S.A., enheten som eier nettstedet og er ansvarlig for den selskapsmessige virksomheten."], ["Forretningsadresse", address], ["Foretaksregister", registry]], email: "E-post", phone: "Telefon", website: "Nettsted",
+      facts: [["Juridisk navn", "AD Caldas Innotec, S.A."], ["Skatte-ID", "A66316399"], ["Selskapsforbindelse", "Cinteca er teknologimerket til AD Caldas Innotec, S.A., enheten som eier nettstedet og er ansvarlig for den selskapsmessige virksomheten."], ["Forretningsadresse", address], ["Foretaksregister", registry]], email: "E-post", contactChannel: "Elektronisk kontakt", contactChannelValue: "Beskyttet kontaktskjema tilgjengelig på dette nettstedet", website: "Nettsted",
       articles: [{ title: "Formål og tilgang", body: "Dette nettstedet presenterer selskapsinformasjon om AD Caldas Innotec, S.A., merket Cinteca og produktene. Tilgangen er åpen og kostnadsfri. Informasjonen er generell og utgjør ikke et kontraktsmessig tilbud eller profesjonell rådgivning." }, { title: "Immaterielle rettigheter", body: "Merker, navn, tekster og annet innhold på nettstedet tilhører sine respektive eiere. Bruk som kan skape forvirring om opprinnelse eller eierskap, er ikke tillatt." }, { title: "Eksterne lenker", body: "Lenker til produktnettsteder fører til uavhengige domener med egne vilkår og retningslinjer. AD Caldas Innotec, S.A. kontrollerer ikke tredjepartsinnhold som lenkes fra disse nettstedene." }, { title: "Gjeldende lov", body: "Nettstedet er underlagt spansk lov. Eventuelle tvister behandles av domstolene som følger av gjeldende regelverk." }],
     },
-    privacy: { label: "Personvern", title: "Personvernerklæring.", intro: "Dette nettstedet bruker ikke skjemaer, brukerkontoer, informasjonskapsler, analyse- eller annonseringsverktøy. Navigering alene oppretter ingen brukerprofil.", items: [{ label: "Behandlingsansvarlig", title: "AD Caldas Innotec, S.A.", body: "Skatte-ID A66316399. Forretningsadresse og kontaktopplysninger finnes i den juridiske informasjonen." }, { label: "Data som behandles", title: "Bare det du sender.", body: "Hvis du skriver eller ringer, behandler vi kontaktopplysningene og innholdet du frivillig gir oss." }, { label: "Formål og rettslig grunnlag", title: "Å besvare henvendelsen.", body: "Data brukes til å besvare spørsmål eller håndtere tiltak før avtaleinngåelse, basert på din forespørsel og den berettigede interessen i profesjonell kommunikasjon." }, { label: "Lagring", title: "Så lenge det er nødvendig.", body: "Data lagres mens henvendelsen behandles og deretter i periodene som kreves for å oppfylle rettslige forpliktelser eller håndtere mulig ansvar." }, { label: "Mottakere", title: "Ingen salg eller kommersiell overføring.", body: "Data deles ikke med tredjeparter med mindre loven krever det eller nødvendige leverandører er underlagt egnede garantier." }, { label: "Dine rettigheter", title: "Innsyn, retting og kontroll.", body: "Du kan be om innsyn, retting, sletting, protest, begrensning eller dataportabilitet via e-post. Du kan også klage til det spanske datatilsynet (AEPD)." }] },
-    footer: { brandRelation: "Teknologimerket til AD Caldas Innotec, S.A.", noTracking: "Nettstedet bruker ingen informasjonskapsler, analyseverktøy eller skjemaer.", legal: "Juridisk informasjon", privacy: "Personvern" },
+    privacy: { label: "Personvern", title: "Personvernerklæring.", intro: "Nettstedet bruker ingen annonse- eller publikumsanalyse. Kontaktskjemaet bruker AWS-infrastruktur, SMTP-levering og Cloudflare Turnstile utelukkende for å motta henvendelser og hindre misbruk.", items: [{ label: "Behandlingsansvarlig", title: "AD Caldas Innotec, S.A.", body: "Skatte-ID A66316399. Forretningsadresse og kontaktopplysninger finnes i den juridiske informasjonen." }, { label: "Data som behandles", title: "Bare det som er nødvendig for å svare.", body: "Vi behandler navn, e-post, selskap, emne og melding du sender, sammen med begrensede tekniske data som er nødvendige for Turnstile-verifisering og tjenestens sikkerhet." }, { label: "Formål og rettslig grunnlag", title: "Å besvare henvendelsen.", body: "Data brukes til å besvare spørsmål eller håndtere tiltak før avtaleinngåelse, basert på din forespørsel og den berettigede interessen i profesjonell kommunikasjon." }, { label: "Lagring", title: "Så lenge det er nødvendig.", body: "Data lagres mens henvendelsen behandles og deretter i periodene som kreves for å oppfylle rettslige forpliktelser eller håndtere mulig ansvar." }, { label: "Mottakere", title: "Ingen salg eller kommersiell overføring.", body: "AWS, den konfigurerte e-postleverandøren og Cloudflare Turnstile kan behandle data bare som nødvendige leverandører og underlagt egnede garantier." }, { label: "Dine rettigheter", title: "Innsyn, retting og kontroll.", body: "Du kan be om innsyn, retting, sletting, protest, begrensning eller dataportabilitet via det beskyttede skjemaet. Du kan også klage til det spanske datatilsynet (AEPD)." }] },
+    footer: { brandRelation: "Teknologimerket til AD Caldas Innotec, S.A.", noTracking: "Ingen annonse- eller publikumsanalyse.", contact: "Beskyttet kontakt", legal: "Juridisk informasjon", privacy: "Personvern" },
   },
 };
 
