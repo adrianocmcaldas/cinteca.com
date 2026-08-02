@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s · Cinteca",
   },
   description:
-    "Sitio corporativo oficial de AD Caldas Innotec, S.A., titular de la marca Cinteca y promotora de productos de software, inteligencia artificial e infraestructura tecnológica.",
+    "Sitio corporativo oficial de AD Caldas Innotec, S.A., titular de la marca Cinteca y promotora de software, IA, telecomunicaciones, automatización e infraestructura tecnológica.",
   keywords: [
     "AD Caldas Innotec",
     "Cinteca",
@@ -35,6 +35,18 @@ export const metadata: Metadata = {
     "NCS Engine",
     "software",
     "inteligencia artificial",
+    "telecomunicaciones",
+    "automatización industrial",
+    "automatización residencial",
+    "electrónica aplicada",
+    "sistemas embebidos",
+    "microcontroladores",
+    "DevOps",
+    "cloud computing",
+    "GPU",
+    "SEO",
+    "GEO",
+    "LLMO",
     "infraestructura tecnológica",
   ],
   openGraph: {
@@ -44,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "Cinteca",
     title: "Cinteca · AD Caldas Innotec, S.A.",
     description:
-      "Sitio corporativo oficial y productos tecnológicos de AD Caldas Innotec, S.A.",
+      "Software, IA, telecomunicaciones, automatización e infraestructura de AD Caldas Innotec, S.A.",
     images: [
       {
         url: "/og.png",
@@ -58,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cinteca · AD Caldas Innotec, S.A.",
     description:
-      "Sitio corporativo oficial y productos tecnológicos de AD Caldas Innotec, S.A.",
+      "Software, IA, telecomunicaciones, automatización e infraestructura de AD Caldas Innotec, S.A.",
     images: ["/og.png"],
   },
 };
