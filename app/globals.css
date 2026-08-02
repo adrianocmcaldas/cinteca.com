@@ -54,7 +54,8 @@ a {
 }
 
 a:focus-visible,
-summary:focus-visible {
+summary:focus-visible,
+select:focus-visible {
   outline: 3px solid var(--coral);
   outline-offset: 4px;
 }
@@ -67,8 +68,9 @@ summary:focus-visible {
   width: min(100% - 48px, 1440px);
   min-height: 82px;
   margin: 0 auto;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto auto minmax(0, 1fr) auto;
   align-items: center;
+  gap: clamp(18px, 2.4vw, 38px);
   border-bottom: 1px solid rgba(21, 35, 56, 0.2);
   background: rgba(237, 242, 241, 0.92);
   backdrop-filter: blur(18px);
@@ -134,8 +136,8 @@ summary:focus-visible {
 .desktop-nav {
   display: flex;
   justify-self: end;
-  gap: clamp(20px, 2.3vw, 36px);
-  font-size: 0.72rem;
+  gap: clamp(15px, 1.7vw, 28px);
+  font-size: 0.68rem;
   font-weight: 700;
 }
 
@@ -163,6 +165,35 @@ summary:focus-visible {
 
 .mobile-nav {
   display: none;
+}
+
+.language-picker {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.language-picker > span {
+  color: var(--muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.54rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.language-picker select {
+  width: 126px;
+  height: 34px;
+  padding: 0 28px 0 9px;
+  border: 1px solid var(--line-dark);
+  border-radius: 2px;
+  background: rgba(251, 252, 251, 0.72);
+  color: var(--ink);
+  cursor: pointer;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.59rem;
+  font-weight: 600;
 }
 
 .hero {
@@ -243,6 +274,19 @@ summary:focus-visible {
   background: var(--cobalt);
   color: var(--white);
   font-size: 0.58rem;
+}
+
+.privacy-grid .privacy-actions {
+  display: flex;
+  margin-top: 18px;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
+.privacy-actions a {
+  color: var(--cobalt);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .identity-card dl {
@@ -954,11 +998,16 @@ footer {
 
 @media (max-width: 1080px) {
   .site-header {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto minmax(0, 1fr) auto;
   }
 
   .header-entity {
     display: none;
+  }
+
+  .desktop-nav {
+    gap: 16px;
+    font-size: 0.64rem;
   }
 
   .hero {
@@ -1017,10 +1066,24 @@ footer {
 
   .site-header {
     min-height: 72px;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 11px;
   }
 
   .desktop-nav {
     display: none;
+  }
+
+  .language-picker {
+    gap: 0;
+  }
+
+  .language-picker > span {
+    display: none;
+  }
+
+  .language-picker select {
+    width: 112px;
   }
 
   .mobile-nav {

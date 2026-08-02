@@ -26,7 +26,17 @@ export const metadata: Metadata = {
     template: "%s · Cinteca",
   },
   description:
-    "Sitio corporativo oficial de AD Caldas Innotec, S.A., titular de la marca Cinteca y promotora de software, IA, telecomunicaciones, automatización e infraestructura tecnológica.",
+    "Official corporate website of AD Caldas Innotec, S.A., owner of the Cinteca technology brand.",
+  alternates: {
+    canonical: "https://cinteca.es",
+    languages: {
+      pt: "/?lang=pt",
+      en: "/?lang=en",
+      es: "/?lang=es",
+      nb: "/?lang=nb",
+      "x-default": "/?lang=en",
+    },
+  },
   keywords: [
     "AD Caldas Innotec",
     "Cinteca",
@@ -51,12 +61,13 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    locale: "es_ES",
+    locale: "en_GB",
+    alternateLocale: ["pt_PT", "es_ES", "nb_NO"],
     url: "https://cinteca.es",
     siteName: "Cinteca",
     title: "Cinteca · AD Caldas Innotec, S.A.",
     description:
-      "Software, IA, telecomunicaciones, automatización e infraestructura de AD Caldas Innotec, S.A.",
+      "Software, AI, telecommunications, automation and infrastructure by AD Caldas Innotec, S.A.",
     images: [
       {
         url: "/og.png",
@@ -70,7 +81,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cinteca · AD Caldas Innotec, S.A.",
     description:
-      "Software, IA, telecomunicaciones, automatización e infraestructura de AD Caldas Innotec, S.A.",
+      "Software, AI, telecommunications, automation and infrastructure by AD Caldas Innotec, S.A.",
     images: ["/og.png"],
   },
 };
@@ -86,7 +97,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="en">
       <body className={`${display.variable} ${body.variable} ${mono.variable}`}>
         {children}
       </body>

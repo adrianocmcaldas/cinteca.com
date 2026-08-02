@@ -28,7 +28,7 @@ test("renders the official company identity and product portfolio", async () => 
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<html lang="es">/i);
+  assert.match(html, /<html lang="en">/i);
   assert.match(html, /<title>Cinteca · AD Caldas Innotec, S\.A\.<\/title>/i);
   assert.match(html, /A66316399/);
   assert.match(html, /CA-56553/);
@@ -37,35 +37,37 @@ test("renders the official company identity and product portfolio", async () => 
   assert.match(html, /NCS Engine/);
   assert.match(html, /adriano@cinteca\.es/);
   assert.match(html, /\+34 665 478 150/);
-  assert.match(html, /Vinculación societaria/);
-  assert.match(html, /Cinteca.*marca tecnológica.*AD Caldas Innotec, S\.A\./s);
-  assert.match(html, /NIF A66316399/);
+  assert.match(html, /Corporate relationship/);
+  assert.match(html, /Cinteca.*technology brand.*AD Caldas Innotec, S\.A\./s);
+  assert.match(html, /Tax ID A66316399/);
+  assert.match(html, /PT(?:<!-- -->)? · (?:<!-- -->)?Português/);
+  assert.match(html, /NO(?:<!-- -->)? · (?:<!-- -->)?Norsk bokmål/);
 });
 
 test("presents direct and adjacent know-how across the full capability map", async () => {
   const response = await render();
   const html = await response.text();
 
-  assert.match(html, /Know-how completo/);
+  assert.match(html, /Complete know-how/);
   assert.match(
     html,
-    /13(?:<!-- -->)? dominios · (?:<!-- -->)?195(?:<!-- -->)? capacidades/,
+    /13(?:<!-- -->|\s)*domains(?:<!-- -->|\s)*·(?:<!-- -->|\s)*195(?:<!-- -->|\s)*capabilities/,
   );
-  assert.match(html, /Procesamiento digital de señales desde 2003/);
-  assert.match(html, /AWS, Microsoft Azure y Google Cloud/);
-  assert.match(html, /Automatización residencial e industrial/);
-  assert.match(html, /SEO técnico y editorial/);
-  assert.match(html, /Conocimiento directo/);
-  assert.match(html, /Dirección e integración/);
+  assert.match(html, /Digital signal processing since 2003/);
+  assert.match(html, /AWS, Microsoft Azure and Google Cloud/);
+  assert.match(html, /Residential and industrial automation/);
+  assert.match(html, /Technical and editorial SEO/);
+  assert.match(html, /Direct knowledge/);
+  assert.match(html, /Leadership and integration/);
 });
 
 test("includes legal, privacy and machine-readable company information", async () => {
   const response = await render();
   const html = await response.text();
 
-  assert.match(html, /Aviso legal/);
-  assert.match(html, /Política de privacidad/);
-  assert.match(html, /no utiliza formularios, cuentas de usuario, cookies ni/i);
+  assert.match(html, /Legal notice/);
+  assert.match(html, /Privacy policy/);
+  assert.match(html, /does not use forms, user accounts, cookies/i);
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /"legalName":"AD Caldas Innotec, S.A."/);
   assert.match(html, /"alternateName":"Cinteca"/);
