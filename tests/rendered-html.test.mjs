@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render(pathname = "/") {
@@ -82,4 +83,14 @@ test("includes legal, privacy and machine-readable company information", async (
   assert.match(html, /"knowsAbout":\[/);
   assert.match(html, /rel="canonical" href="https:\/\/cinteca\.es"/i);
   assert.doesNotMatch(html, /"telephone"|google-analytics|googletagmanager|cookie banner/i);
+});
+
+test("identifies Cinteca to the shared contact Lambda", async () => {
+  const source = await readFile(
+    new URL("../app/page.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /site: "cinteca"/);
+  assert.doesNotMatch(source, /web-cinteca@cinteca\.es/);
 });
