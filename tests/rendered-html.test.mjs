@@ -40,6 +40,8 @@ test("renders the official company identity and product portfolio", async () => 
   assert.match(html, /Corporate relationship/);
   assert.match(html, /Cinteca.*technology brand.*AD Caldas Innotec, S\.A\./s);
   assert.match(html, /Tax ID A66316399/);
+  assert.match(html, /Global scope/);
+  assert.match(html, /progressive global expansion/);
   assert.match(html, /PT(?:<!-- -->)? · (?:<!-- -->)?Português/);
   assert.match(html, /NO(?:<!-- -->)? · (?:<!-- -->)?Norsk bokmål/);
 });
@@ -72,6 +74,7 @@ test("includes legal, privacy and machine-readable company information", async (
   assert.match(html, /"legalName":"AD Caldas Innotec, S.A."/);
   assert.match(html, /"alternateName":"Cinteca"/);
   assert.match(html, /"taxID":"A66316399"/);
+  assert.match(html, /"areaServed":"Worldwide"/);
   assert.match(html, /"knowsAbout":\[/);
   assert.match(html, /rel="canonical" href="https:\/\/cinteca\.es"/i);
   assert.doesNotMatch(html, /<form|google-analytics|googletagmanager|cookie banner/i);

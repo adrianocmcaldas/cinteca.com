@@ -30,3 +30,10 @@ test("every locale contains the complete capability inventory", () => {
     assert.equal(topicCount, 195, `${locale} capability count`);
   }
 });
+
+test("every locale presents the company with global scope", () => {
+  assert.match(translations.en.status.join(" "), /Global scope/);
+  assert.match(translations.es.status.join(" "), /Alcance global/);
+  assert.match(translations.pt.status.join(" "), /Atuação global/);
+  assert.match(translations.nb.status.join(" "), /Globalt virkeområde/);
+});

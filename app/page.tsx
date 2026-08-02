@@ -74,6 +74,7 @@ export default function Home() {
           url: "https://cinteca.es",
           taxID: "A66316399",
           foundingDate: "2014-06-06",
+          areaServed: "Worldwide",
           email,
           telephone: telephoneLink,
           inLanguage: copy.htmlLang,
