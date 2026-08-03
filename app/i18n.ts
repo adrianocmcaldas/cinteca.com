@@ -732,7 +732,7 @@ export const translations: Record<Locale, SiteCopy> = {
       contactValue: "Protected channel",
       completeIdentity: "View complete company details",
     },
-    status: ["Active company", "Technology activity since 2014", "Global scope · International projects", "No advertising analytics"],
+    status: ["Active company", "Technology activity since 2014", "Global scope · International projects", "Products with their own identity"],
     statusLabel: "Company status",
     company: {
       label: "The company",
@@ -835,7 +835,7 @@ export const translations: Record<Locale, SiteCopy> = {
     nav: { company: "Empresa", capabilities: "Capacidades", products: "Productos", contact: "Contacto", legal: "Aviso legal", privacy: "Privacidad" },
     registryLabel: "Registro",
     hero: { eyebrow: "Sitio corporativo oficial", title: "Tecnología aplicada, construida para operar.", titlePre: "Tecnología aplicada,", titleAccent: "construida para operar.", intro: "Cinteca es la marca tecnológica de AD Caldas Innotec, S.A. La compañía desarrolla y gestiona productos de software, inteligencia artificial e infraestructura digital para profesionales y empresas.", ctaProducts: "Ver productos", ctaContact: "Contacto protegido", entity: "Entidad mercantil española", companyName: "Razón social", taxId: "NIF", registry: "Registro", contact: "Contacto", contactValue: "Canal protegido", completeIdentity: "Ver identificación completa" },
-    status: ["Empresa activa", "Actividad tecnológica desde 2014", "Alcance global · Proyectos internacionales", "Sin analítica publicitaria"],
+    status: ["Empresa activa", "Actividad tecnológica desde 2014", "Alcance global · Proyectos internacionales", "Productos con identidad propia"],
     statusLabel: "Estado de la empresa",
     company: {
       label: "La empresa", title: "Una entidad. Distintos productos tecnológicos.",
@@ -864,7 +864,7 @@ export const translations: Record<Locale, SiteCopy> = {
     nav: { company: "Empresa", capabilities: "Competências", products: "Produtos", contact: "Contato", legal: "Aviso legal", privacy: "Privacidade" },
     registryLabel: "Registro",
     hero: { eyebrow: "Site corporativo oficial", title: "Tecnologia aplicada, construída para operar.", titlePre: "Tecnologia aplicada,", titleAccent: "construída para operar.", intro: "Cinteca é a marca tecnológica da AD Caldas Innotec, S.A. A empresa desenvolve e gerencia produtos de software, inteligência artificial e infraestrutura digital para profissionais e organizações.", ctaProducts: "Ver produtos", ctaContact: "Contato protegido", entity: "Sociedade mercantil espanhola", companyName: "Razão social", taxId: "NIF", registry: "Registro", contact: "Contato", contactValue: "Canal protegido", completeIdentity: "Ver identificação completa" },
-    status: ["Empresa ativa", "Atividade tecnológica desde 2014", "Atuação global · Projetos internacionais", "Sem analytics de publicidade"],
+    status: ["Empresa ativa", "Atividade tecnológica desde 2014", "Atuação global · Projetos internacionais", "Produtos com identidade própria"],
     statusLabel: "Estado da empresa",
     company: {
       label: "A empresa", title: "Uma entidade. Diferentes produtos tecnológicos.",
@@ -893,7 +893,7 @@ export const translations: Record<Locale, SiteCopy> = {
     nav: { company: "Selskapet", capabilities: "Kompetanse", products: "Produkter", contact: "Kontakt", legal: "Juridisk informasjon", privacy: "Personvern" },
     registryLabel: "Register",
     hero: { eyebrow: "Offisielt firmanettsted", title: "Anvendt teknologi, bygget for drift.", titlePre: "Anvendt teknologi,", titleAccent: "bygget for drift.", intro: "Cinteca er teknologimerket til AD Caldas Innotec, S.A. Selskapet utvikler og forvalter programvareprodukter, kunstig intelligens og digital infrastruktur for fagpersoner og virksomheter.", ctaProducts: "Se produktene", ctaContact: "Beskyttet kontakt", entity: "Spansk aksjeselskap", companyName: "Juridisk navn", taxId: "Skatte-ID", registry: "Register", contact: "Kontakt", contactValue: "Beskyttet kanal", completeIdentity: "Se fullstendige selskapsopplysninger" },
-    status: ["Aktivt selskap", "Teknologivirksomhet siden 2014", "Globalt virkeområde · Internasjonale prosjekter", "Ingen annonseanalyse"],
+    status: ["Aktivt selskap", "Teknologivirksomhet siden 2014", "Globalt virkeområde · Internasjonale prosjekter", "Produkter med egen identitet"],
     statusLabel: "Selskapsstatus",
     company: {
       label: "Selskapet", title: "Ett selskap. Ulike teknologiprodukter.",
