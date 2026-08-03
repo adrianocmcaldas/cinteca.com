@@ -1114,7 +1114,22 @@ a {
   line-height: 1.15;
 }
 
-.product-name .product-domain {
+.product-name .product-tag {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 3px 9px;
+  border: 1px solid var(--brass);
+  color: var(--ink);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.62rem;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.product-domain {
   display: block;
   margin-top: 9px;
   color: var(--moss);

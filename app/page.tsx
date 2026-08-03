@@ -719,7 +719,12 @@ export default function Home() {
                 </span>
                 <div className="product-name">
                   <span>{product.code}</span>
-                  <h3>{product.name}</h3>
+                  <h3>
+                    {product.name}
+                    {product.tag ? (
+                      <em className="product-tag">{product.tag}</em>
+                    ) : null}
+                  </h3>
                   <span className="product-domain">
                     {new URL(product.url).hostname}
                   </span>
