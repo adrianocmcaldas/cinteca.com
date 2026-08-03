@@ -1,8 +1,22 @@
 # cinteca.es
 
-Site institucional da Cinteca, marca tecnológica vinculada à AD Caldas
-Innotec, S.A. O conteúdo está disponível em português, inglês, espanhol e
-norueguês Bokmål.
+Site corporativo oficial da [Cinteca](https://cinteca.es), marca tecnológica da **AD Caldas Innotec, S.A.** (sociedade mercantil espanhola).
+
+![Hero do site — identidade «Registo»](docs/hero.jpg)
+
+Identidade visual **«Registo»**: uma casa institucional em verde profundo, marfim e latão — o cartão de identidade da sociedade apresenta-se como certificado com selo, as secções como folhas de registo e os produtos como cartões-certificado.
+
+![Formulário de contato protegido](docs/contato.jpg)
+
+## Características
+
+- **Next.js 16** (App Router) com exportação estática — sem servidor, sem banco de dados, sem cookies, sem analytics;
+- **4 idiomas** (pt · en · es · nb) com deteção pelo navegador e seleção manual via `?lang=`;
+- **Contato protegido**: Cloudflare Turnstile + honeypot + Lambda de envio — sem e-mail publicado;
+- **Conformidade**: aviso legal (art. 10 da Lei espanhola 34/2002 — LSSI) e política de privacidade integrados;
+- **Acessibilidade**: contraste WCAG AA documentado no CSS, foco visível, animações sob `prefers-reduced-motion`;
+- **JSON-LD** (Organization/Brand/WebSite), sitemap e robots;
+- Testes de conteúdo que validam o HTML renderizado, o inventário de competências (13 domínios · 195 competências) e o contrato do formulário.
 
 ## Desenvolvimento local
 
@@ -13,20 +27,20 @@ npm install
 npm run dev
 ```
 
+Para o formulário funcionar localmente, copie `.env.example` para `.env.local` e defina `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (em localhost é usada automaticamente a chave de teste do Turnstile).
+
 ## Validação
 
 ```bash
-npm test
+npm test           # build + testes de conteúdo
 npm run lint
 npm audit
 ```
 
-## Contato protegido
+## Publicação
 
-O formulário usa Cloudflare Turnstile e a Lambda SMTP compartilhada com
-`adrianocaldas.com`. Este site envia o identificador fixo `cinteca`; a Lambda
-mantém o destinatário único em `CONTACT_TO_EMAIL` e seleciona
-`CONTACT_FROM_EMAIL_CINTECA`, configurado como `web-cinteca@cinteca.es`. A
-chave pública do Turnstile é definida em `NEXT_PUBLIC_TURNSTILE_SITE_KEY`.
+```bash
+npm run build:s3   # gera out/ (exportação estática)
+```
 
-O site não usa banco de dados, cookies ou analytics.
+O conteúdo de `out/` é publicado como site estático (S3 + CloudFront) no domínio `cinteca.es`.
