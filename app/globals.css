@@ -1945,6 +1945,394 @@ footer {
   }
 }
 
+/* ————————————————— Legal Center (/legal) ——————————————————————— */
+
+/* One line/link on the home sheets pointing at the full documents. */
+.full-docs {
+  margin: clamp(24px, 3vw, 36px) 0 0;
+  color: var(--moss);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+}
+
+.full-docs a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--brass);
+  text-underline-offset: 3px;
+}
+
+.full-docs a:hover {
+  text-decoration-color: var(--ink);
+}
+
+.legal-shell {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.legal-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  min-height: 82px;
+  padding-inline: var(--gutter);
+  align-items: center;
+  gap: clamp(18px, 2.4vw, 38px);
+  border-bottom: 1px solid rgba(176, 141, 87, 0.4);
+  background: rgba(11, 40, 32, 0.88);
+  backdrop-filter: blur(16px);
+}
+
+.legal-header .language-picker {
+  margin-left: auto;
+}
+
+.legal-main {
+  flex: 1;
+  padding: clamp(40px, 6vw, 88px) var(--gutter);
+}
+
+.legal-sheet {
+  max-width: 1060px;
+  margin-inline: auto;
+}
+
+.legal-sheet h1 {
+  margin: 0 0 16px;
+  font-family: var(--font-display), "Fraunces", serif;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.legal-doc-meta {
+  margin: 0 0 18px;
+  color: var(--moss);
+  font-family: var(--font-mono), monospace;
+  font-size: var(--label-sm);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.legal-prevalence {
+  max-width: 62em;
+  margin: 0 0 8px;
+  color: var(--moss);
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.legal-lead {
+  max-width: 68em;
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-size: 0.94rem;
+  line-height: 1.85;
+}
+
+/* Scope — the ledger of covered properties, drawn like a deed note. */
+.legal-scope {
+  margin: clamp(26px, 3.4vw, 40px) 0 0;
+  padding: clamp(8px, 1.2vw, 14px) 0 clamp(8px, 1.2vw, 14px) clamp(22px, 3vw, 34px);
+  border-left: 3px solid var(--brass);
+}
+
+.legal-scope > span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--moss);
+  font-family: var(--font-mono), monospace;
+  font-size: var(--label-sm);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.legal-scope ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--ink);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+.legal-scope li {
+  padding: 8px 0;
+  border-bottom: 1px dotted rgba(16, 36, 28, 0.5);
+}
+
+.legal-scope > p {
+  margin: 14px 0 0;
+  color: var(--moss);
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
+
+/* Hub cards — one per document. */
+.legal-cards {
+  display: grid;
+  margin: clamp(30px, 4vw, 48px) 0 clamp(26px, 3.4vw, 40px);
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2vw, 26px);
+}
+
+.legal-card {
+  position: relative;
+  display: flex;
+  padding: clamp(18px, 2.4vw, 26px);
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid var(--ink-hairline);
+  border-radius: 2px;
+  background: var(--ivory-lift);
+  color: var(--ink);
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.legal-card:hover {
+  border-color: var(--brass);
+  box-shadow: 0 14px 30px -22px rgba(0, 0, 0, 0.55);
+}
+
+.legal-card-number {
+  color: var(--moss);
+  font-family: var(--font-mono), monospace;
+  font-size: var(--label-sm);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+}
+
+.legal-card h2 {
+  margin: 0;
+  font-family: var(--font-display), "Fraunces", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.legal-card p {
+  margin: 0;
+  flex: 1;
+  color: var(--moss);
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+.legal-card-arrow {
+  align-self: flex-end;
+  color: var(--moss);
+  font-size: 1rem;
+}
+
+/* Numbered clauses — h2 counters over engraved hairlines. */
+.legal-sections {
+  margin-top: clamp(26px, 3.4vw, 40px);
+  counter-reset: legal-clause;
+}
+
+.legal-sections section {
+  padding: clamp(20px, 2.8vw, 32px) 0;
+  border-top: 1px solid var(--ink-hairline);
+  counter-increment: legal-clause;
+}
+
+.legal-sections section:last-child {
+  padding-bottom: 0;
+}
+
+.legal-sections h2 {
+  margin: 0 0 14px;
+  font-family: var(--font-display), "Fraunces", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+.legal-sections h2::before {
+  margin-right: 14px;
+  color: var(--moss);
+  content: counter(legal-clause, decimal-leading-zero);
+  font-family: var(--font-mono), monospace;
+  font-size: var(--label-sm);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+}
+
+.legal-sections p {
+  max-width: 72em;
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-size: 0.88rem;
+  line-height: 1.85;
+}
+
+.legal-sections p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-list {
+  max-width: 68em;
+  margin: 0 0 12px;
+  padding-left: 26px;
+  color: var(--ink);
+  font-size: 0.88rem;
+  line-height: 1.85;
+}
+
+.legal-list li {
+  margin-bottom: 6px;
+  padding-left: 4px;
+}
+
+.legal-list-roman {
+  list-style: lower-roman;
+}
+
+/* Purposes × legal bases — book-keeping table. */
+.legal-table-wrap {
+  margin: 0 0 12px;
+  overflow-x: auto;
+}
+
+.legal-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+
+.legal-table th {
+  padding: 10px 18px 10px 0;
+  border-bottom: 1px solid rgba(16, 36, 28, 0.45);
+  color: var(--moss);
+  font-family: var(--font-mono), monospace;
+  font-size: var(--label-sm);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.legal-table td {
+  padding: 12px 18px 12px 0;
+  border-bottom: 1px dotted rgba(16, 36, 28, 0.5);
+  color: var(--ink);
+  line-height: 1.7;
+  vertical-align: top;
+}
+
+/* Contact block — the single protected channel. */
+.legal-contact {
+  margin-top: clamp(26px, 3.4vw, 40px);
+  padding: 16px clamp(18px, 2.4vw, 26px);
+  border-left: 3px solid var(--brass);
+  background: var(--ivory-lift);
+}
+
+.legal-contact > span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--moss);
+  font-family: var(--font-mono), monospace;
+  font-size: var(--label-sm);
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.legal-contact p {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+.legal-contact a,
+.legal-doc-nav a {
+  text-decoration: underline;
+  text-decoration-color: var(--brass);
+  text-underline-offset: 3px;
+}
+
+.legal-contact a:hover,
+.legal-doc-nav a:hover {
+  text-decoration-color: var(--ink);
+}
+
+/* Bottom navigation between the three documents. */
+.legal-doc-nav {
+  display: flex;
+  margin-top: clamp(26px, 3.4vw, 40px);
+  padding-top: 18px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  border-top: 1px solid rgba(16, 36, 28, 0.45);
+  color: var(--ink);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+}
+
+.legal-doc-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+}
+
+/* Footer — a single registry line on forest-deep cloth. */
+.legal-footer {
+  display: flex;
+  min-height: 70px;
+  padding-block: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 30px;
+  color: var(--ivory-soft);
+  font-size: 0.74rem;
+}
+
+.legal-footer p {
+  margin: 0;
+}
+
+.legal-footer a {
+  color: var(--ivory);
+  text-decoration: underline;
+  text-decoration-color: var(--brass);
+  text-underline-offset: 3px;
+}
+
+.legal-footer a:hover {
+  color: var(--brass-light);
+}
+
+@media (max-width: 980px) {
+  .legal-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .legal-header .header-entity {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -905,6 +905,11 @@ export default function Home() {
               </article>
             ))}
           </div>
+
+          <p className="full-docs">
+            {copy.legal.fullDocuments}{" "}
+            <a href={`/legal/?lang=${locale}`}>cinteca.es/legal</a>
+          </p>
           </div>
         </div>
       </section>
@@ -937,6 +942,11 @@ export default function Home() {
               </article>
             ))}
           </div>
+
+          <p className="full-docs">
+            {copy.privacy.fullDocuments}{" "}
+            <a href={`/legal/?lang=${locale}`}>cinteca.es/legal</a>
+          </p>
           </div>
         </div>
       </section>
@@ -962,6 +972,7 @@ export default function Home() {
           <div>
             <a href="#aviso-legal">{copy.footer.legal}</a>
             <a href="#privacidad">{copy.footer.privacy}</a>
+            <a href={`/legal/?lang=${locale}`}>{copy.footer.legalCenter}</a>
           </div>
         </div>
       </footer>
