@@ -50,7 +50,6 @@ export type SiteCopy = {
   registryLabel: string;
   hero: {
     eyebrow: string;
-    title: string;
     titlePre: string;
     titleAccent: string;
     intro: string;
@@ -151,7 +150,7 @@ export const localeOptions: { code: Locale; short: string; label: string; lang: 
 
 const productUrls = {
   legalNeuron: "https://legalneuron.es",
-  nordixBios: "https://nordixbios.com/es/",
+  nordixBios: "https://nordixbios.com",
   ncsEngine: "https://ncsengine.com",
 };
 
@@ -232,7 +231,7 @@ const enCapabilities: Capability[] = [
     code: "AIM",
     title: "Artificial intelligence and signal processing",
     direct: [
-      "Digital signal processing since 2003",
+      "Digital signal processing",
       "Creation and application of AI algorithms",
       "Model development and training",
       "Signal and time-series processing",
@@ -470,8 +469,8 @@ const esCapabilities: Capability[] = [
   {
     code: "SWE",
     title: "Ingeniería y arquitectura de software",
-    direct: ["Desarrollo de software a medida", "Backend, frontend y full stack", "APIs, servicios e integraciones", "Arquitectura de aplicaciones", "Bases de datos SQL y NoSQL", "Automatización de procesos", "Productos simples y sistemas complejos"],
-    adjacent: ["Microsservicios y sistemas distribuidos", "Arquitectura orientada a eventos", "SaaS, multi-tenant y plataformas", "Mensajería, colas y streaming", "Modernización de sistemas heredados", "Pruebas, QA y automatización", "Rendimiento, escalabilidad y resiliencia", "Documentación y gobierno de APIs"],
+    direct: ["Desarrollo de software a medida", "Backend, frontend y full stack", "APIs, servicios e integraciones", "Arquitectura de aplicaciones", "Bases de datos SQL y NoSQL", "Automatización de procesos", "De productos simples a sistemas complejos"],
+    adjacent: ["Microservicios y sistemas distribuidos", "Arquitectura orientada a eventos", "SaaS, multi-tenant y plataformas", "Mensajería, colas y streaming", "Modernización de sistemas heredados", "Pruebas, QA y automatización", "Rendimiento, escalabilidad y resiliencia", "Documentación y gobierno de APIs"],
   },
   {
     code: "APP",
@@ -482,7 +481,7 @@ const esCapabilities: Capability[] = [
   {
     code: "AIM",
     title: "Inteligencia artificial y procesamiento de señales",
-    direct: ["Procesamiento digital de señales desde 2003", "Creación y aplicación de algoritmos de IA", "Entrenamiento y desarrollo de modelos", "Tratamiento de señales y series temporales", "Automatización inteligente", "Aplicaciones de IA en productos reales", "Evaluación y ajuste de modelos"],
+    direct: ["Procesamiento digital de señales", "Creación y aplicación de algoritmos de IA", "Entrenamiento y desarrollo de modelos", "Tratamiento de señales y series temporales", "Automatización inteligente", "Aplicaciones de IA en productos reales", "Evaluación y ajuste de modelos"],
     adjacent: ["Machine learning y deep learning", "LLMs, agentes y herramientas", "RAG, búsqueda semántica y bases vectoriales", "Visión computacional, audio y voz", "NLP, clasificación y extracción", "MLOps, LLMOps y observabilidad de modelos", "IA responsable, seguridad y evaluación", "Inferencia local, cloud y edge"],
   },
   {
@@ -563,7 +562,7 @@ const ptCapabilities: Capability[] = [
   {
     code: "AIM",
     title: "Inteligência artificial e processamento de sinais",
-    direct: ["Processamento digital de sinais desde 2003", "Criação e aplicação de algoritmos de IA", "Desenvolvimento e treinamento de modelos", "Tratamento de sinais e séries temporais", "Automação inteligente", "Aplicações de IA em produtos reais", "Avaliação e ajuste de modelos"],
+    direct: ["Processamento digital de sinais", "Criação e aplicação de algoritmos de IA", "Desenvolvimento e treinamento de modelos", "Tratamento de sinais e séries temporais", "Automação inteligente", "Aplicações de IA em produtos reais", "Avaliação e ajuste de modelos"],
     adjacent: ["Machine learning e deep learning", "LLMs, agentes e ferramentas", "RAG, busca semântica e bancos vetoriais", "Visão computacional, áudio e voz", "NLP, classificação e extração", "MLOps, LLMOps e observabilidade de modelos", "IA responsável, segurança e avaliação", "Inferência local, cloud e edge"],
   },
   {
@@ -644,7 +643,7 @@ const nbCapabilities: Capability[] = [
   {
     code: "AIM",
     title: "Kunstig intelligens og signalbehandling",
-    direct: ["Digital signalbehandling siden 2003", "Utvikling og anvendelse av KI-algoritmer", "Modellutvikling og trening", "Behandling av signaler og tidsserier", "Intelligent automatisering", "KI i reelle produkter", "Evaluering og finjustering av modeller"],
+    direct: ["Digital signalbehandling", "Utvikling og anvendelse av KI-algoritmer", "Modellutvikling og trening", "Behandling av signaler og tidsserier", "Intelligent automatisering", "KI i reelle produkter", "Evaluering og finjustering av modeller"],
     adjacent: ["Maskinlæring og dyp læring", "LLM-er, agenter og verktøy", "RAG, semantisk søk og vektordatabaser", "Datasyn, lyd og tale", "NLP, klassifisering og uttrekk", "MLOps, LLMOps og modellobservabilitet", "Ansvarlig KI, sikkerhet og evaluering", "Lokal, sky- og edge-inferens"],
   },
   {
@@ -709,7 +708,7 @@ export const translations: Record<Locale, SiteCopy> = {
     htmlLang: "en",
     metadata: {
       title: "Cinteca · AD Caldas Innotec, S.A.",
-      description: "Official corporate website of AD Caldas Innotec, S.A., owner of the Cinteca technology brand.",
+      description: "Official corporate website of AD Caldas Innotec, S.A., owner of the Cinteca brand: software products, AI and digital infrastructure — NordixBIOS (Agentic AI Factory), LegalNeuron and NCS Engine.",
     },
     languageLabel: "Language",
     navigationLabel: "Main navigation",
@@ -718,7 +717,6 @@ export const translations: Record<Locale, SiteCopy> = {
     registryLabel: "Register",
     hero: {
       eyebrow: "Official corporate website",
-      title: "Applied technology, built to operate.",
       titlePre: "Applied technology,",
       titleAccent: "built to operate.",
       intro: "Cinteca is the technology brand of AD Caldas Innotec, S.A. The company develops and manages software products, artificial intelligence and digital infrastructure for professionals and organisations.",
@@ -746,7 +744,7 @@ export const translations: Record<Locale, SiteCopy> = {
       linkBody: "Cinteca is the technology brand and corporate identity linked to AD Caldas Innotec, S.A., a company incorporated in Spain with Tax ID A66316399. AD Caldas Innotec, S.A. owns this website and provides the corporate framework through which Cinteca’s technology activity is presented.",
       activitiesLabel: "Areas of activity",
       activities: [
-        { code: "INTELLIGENCE", title: "Agentic AI Factory", description: "Assistants, models, automation and information processing." },
+        { code: "INTELLIGENCE", title: "Agentic AI Factory", description: "AI workers, agents, models and intelligent automation." },
         { code: "SOFTWARE", title: "Products and platforms", description: "Web, mobile and desktop applications, APIs and integrations." },        { code: "INFRASTRUCTURE", title: "Systems and operations", description: "Cloud, local and hybrid environments, networks and accelerated computing." },
         { code: "ENGINEERING", title: "Technology integration", description: "Telecommunications, automation, electronics and connected systems." },
       ],
@@ -828,20 +826,20 @@ export const translations: Record<Locale, SiteCopy> = {
   es: {
     localeName: "Español",
     htmlLang: "es",
-    metadata: { title: "Cinteca · AD Caldas Innotec, S.A.", description: "Sitio corporativo oficial de AD Caldas Innotec, S.A., titular de la marca tecnológica Cinteca." },
+    metadata: { title: "Cinteca · AD Caldas Innotec, S.A.", description: "Sitio corporativo oficial de AD Caldas Innotec, S.A., titular de la marca Cinteca: productos de software, IA e infraestructura digital — NordixBIOS (Agentic AI Factory), LegalNeuron y NCS Engine." },
     languageLabel: "Idioma",
     navigationLabel: "Navegación principal",
     menuLabel: "Menú",
     nav: { company: "Empresa", capabilities: "Capacidades", products: "Productos", contact: "Contacto", legal: "Aviso legal", privacy: "Privacidad" },
     registryLabel: "Registro",
-    hero: { eyebrow: "Sitio corporativo oficial", title: "Tecnología aplicada, construida para operar.", titlePre: "Tecnología aplicada,", titleAccent: "construida para operar.", intro: "Cinteca es la marca tecnológica de AD Caldas Innotec, S.A. La compañía desarrolla y gestiona productos de software, inteligencia artificial e infraestructura digital para profesionales y empresas.", ctaProducts: "Ver productos", ctaContact: "Contacto protegido", entity: "Entidad mercantil española", companyName: "Razón social", taxId: "NIF", registry: "Registro", contact: "Contacto", contactValue: "Canal protegido", completeIdentity: "Ver identificación completa" },
+    hero: { eyebrow: "Sitio corporativo oficial", titlePre: "Tecnología aplicada,", titleAccent: "construida para operar.", intro: "Cinteca es la marca tecnológica de AD Caldas Innotec, S.A. La compañía desarrolla y gestiona productos de software, inteligencia artificial e infraestructura digital para profesionales y organizaciones.", ctaProducts: "Ver productos", ctaContact: "Contacto protegido", entity: "Entidad mercantil española", companyName: "Razón social", taxId: "NIF", registry: "Registro", contact: "Contacto", contactValue: "Canal protegido", completeIdentity: "Ver identificación completa" },
     status: ["Empresa activa", "Actividad tecnológica desde 2014", "Alcance global · Proyectos internacionales", "Productos con identidad propia"],
     statusLabel: "Estado de la empresa",
     company: {
       label: "La empresa", title: "Una entidad. Distintos productos tecnológicos.",
       paragraphs: ["AD Caldas Innotec, S.A. es una sociedad mercantil española dedicada a la prestación de servicios relacionados con las tecnologías de la información y la comunicación, incluyendo la creación, el desarrollo y la gestión de recursos web y aplicaciones de software.", "Cinteca identifica el núcleo tecnológico y corporativo del grupo. Bajo este marco se impulsan productos y marcas con identidad propia para ámbitos jurídicos, empresariales y de infraestructura. Esta estructura explica que el dominio corporativo y los productos anunciados puedan utilizar nombres diferentes sin dejar de formar parte del mismo ecosistema empresarial. Los proyectos ya se extienden a distintos países y los productos existentes están concebidos para una expansión global progresiva."],
       linkLabel: "Vinculación societaria", linkTitle: "Marca ↔ sociedad titular", linkBody: "Cinteca es la marca tecnológica y la identidad corporativa vinculada a AD Caldas Innotec, S.A., sociedad mercantil constituida en España con NIF A66316399. AD Caldas Innotec, S.A. es la entidad titular de este sitio y el marco societario desde el que se presenta la actividad tecnológica de Cinteca.", activitiesLabel: "Ámbitos de actividad",
-      activities: [ { code: "INTELIGENCIA", title: "Agentic AI Factory", description: "Asistentes, modelos, automatización y procesamiento de información." }, { code: "SOFTWARE", title: "Productos y plataformas", description: "Aplicaciones web, móviles y de escritorio, APIs e integraciones." },{ code: "INFRAESTRUCTURA", title: "Sistemas y operación", description: "Cloud, entornos locales e híbridos, redes y computación acelerada." }, { code: "INGENIERÍA", title: "Integración tecnológica", description: "Telecomunicaciones, automatización, electrónica y sistemas conectados." }],
+      activities: [ { code: "INTELIGENCIA", title: "Agentic AI Factory", description: "Trabajadores IA, agentes, modelos y automatización inteligente." }, { code: "SOFTWARE", title: "Productos y plataformas", description: "Aplicaciones web, móviles y de escritorio, APIs e integraciones." },{ code: "INFRAESTRUCTURA", title: "Sistemas y operación", description: "Cloud, entornos locales e híbridos, redes y computación acelerada." }, { code: "INGENIERÍA", title: "Integración tecnológica", description: "Telecomunicaciones, automatización, electrónica y sistemas conectados." }],
     },
     capabilities: { label: "Capacidades", title: "Know-how completo, sin convertirlo en un currículum.", intro: "El mapa distingue la experiencia directamente consolidada de las disciplinas adyacentes que pueden ser dirigidas, integradas o administradas con especialistas según el alcance del proyecto.", direct: "Conocimiento directo", adjacent: "Dirección e integración", domains: "dominios", topics: "capacidades", topicCount: "temas", note: "“Dirección e integración” no pretende atribuir dominio individual de cada especialidad: identifica ámbitos que Cinteca puede evaluar, contratar, coordinar y gobernar con responsabilidad técnica.", items: esCapabilities },
     products: { label: "Productos", title: "Productos con identidad propia.", intro: "Cada producto responde a un contexto específico y dispone de su propio dominio, comunicación y propuesta de valor.", items: [ { name: "NordixBIOS", code: "AGENTIC AI FACTORY", url: productUrls.nordixBios, tag: "Proyecto más reciente", description: "Agentic AI Factory: se conecta a tu software — ERP, CRM, TPV o SaaS vertical — y pone la infraestructura completa para crear y operar trabajadores IA en todas las capas, con tu marca." },{ name: "LegalNeuron", code: "LEGAL AI", url: productUrls.legalNeuron, description: "Software de inteligencia artificial y gestión para profesionales del derecho y despachos. Facilita el análisis, la revisión y la automatización de documentos y procesos jurídicos." },{ name: "NCS Engine", code: "AI INFRASTRUCTURE", url: productUrls.ncsEngine, description: "Infraestructura segura para desplegar y operar inteligencia artificial en entornos cloud, locales e híbridos." }] },
@@ -857,23 +855,23 @@ export const translations: Record<Locale, SiteCopy> = {
   pt: {
     localeName: "Português",
     htmlLang: "pt",
-    metadata: { title: "Cinteca · AD Caldas Innotec, S.A.", description: "Site corporativo oficial da AD Caldas Innotec, S.A., titular da marca tecnológica Cinteca." },
+    metadata: { title: "Cinteca · AD Caldas Innotec, S.A.", description: "Site corporativo oficial da AD Caldas Innotec, S.A., titular da marca Cinteca: produtos de software, IA e infraestrutura digital — NordixBIOS (Agentic AI Factory), LegalNeuron e NCS Engine." },
     languageLabel: "Idioma",
     navigationLabel: "Navegação principal",
     menuLabel: "Menu",
     nav: { company: "Empresa", capabilities: "Competências", products: "Produtos", contact: "Contato", legal: "Aviso legal", privacy: "Privacidade" },
     registryLabel: "Registro",
-    hero: { eyebrow: "Site corporativo oficial", title: "Tecnologia aplicada, construída para operar.", titlePre: "Tecnologia aplicada,", titleAccent: "construída para operar.", intro: "Cinteca é a marca tecnológica da AD Caldas Innotec, S.A. A empresa desenvolve e gerencia produtos de software, inteligência artificial e infraestrutura digital para profissionais e organizações.", ctaProducts: "Ver produtos", ctaContact: "Contato protegido", entity: "Sociedade mercantil espanhola", companyName: "Razão social", taxId: "NIF", registry: "Registro", contact: "Contato", contactValue: "Canal protegido", completeIdentity: "Ver identificação completa" },
+    hero: { eyebrow: "Site corporativo oficial", titlePre: "Tecnologia aplicada,", titleAccent: "construída para operar.", intro: "Cinteca é a marca tecnológica da AD Caldas Innotec, S.A. A empresa desenvolve e gerencia produtos de software, inteligência artificial e infraestrutura digital para profissionais e organizações.", ctaProducts: "Ver produtos", ctaContact: "Contato protegido", entity: "Sociedade mercantil espanhola", companyName: "Razão social", taxId: "NIF", registry: "Registro", contact: "Contato", contactValue: "Canal protegido", completeIdentity: "Ver identificação completa" },
     status: ["Empresa ativa", "Atividade tecnológica desde 2014", "Atuação global · Projetos internacionais", "Produtos com identidade própria"],
     statusLabel: "Estado da empresa",
     company: {
       label: "A empresa", title: "Uma entidade. Diferentes produtos tecnológicos.",
       paragraphs: ["AD Caldas Innotec, S.A. é uma sociedade mercantil espanhola dedicada à prestação de serviços relacionados às tecnologias da informação e comunicação, incluindo a criação, o desenvolvimento e a gestão de recursos web e aplicações de software.", "Cinteca identifica o núcleo tecnológico e corporativo do grupo. Sob essa estrutura são desenvolvidos produtos e marcas com identidade própria para os setores jurídico, empresarial e de infraestrutura. Isso explica por que o domínio corporativo e os produtos anunciados podem usar nomes diferentes e ainda fazer parte do mesmo ecossistema empresarial. Os projetos já abrangem diferentes países, e os produtos existentes são concebidos para uma expansão global progressiva."],
       linkLabel: "Vínculo societário", linkTitle: "Marca ↔ sociedade titular", linkBody: "Cinteca é a marca tecnológica e a identidade corporativa vinculada à AD Caldas Innotec, S.A., sociedade mercantil constituída na Espanha com NIF A66316399. A AD Caldas Innotec, S.A. é a entidade titular deste site e a estrutura societária a partir da qual a atividade tecnológica da Cinteca é apresentada.", activitiesLabel: "Áreas de atuação",
-      activities: [ { code: "INTELIGÊNCIA", title: "Agentic AI Factory", description: "Assistentes, modelos, automação e processamento de informação." }, { code: "SOFTWARE", title: "Produtos e plataformas", description: "Aplicações web, móveis e desktop, APIs e integrações." },{ code: "INFRAESTRUTURA", title: "Sistemas e operação", description: "Cloud, ambientes locais e híbridos, redes e computação acelerada." }, { code: "ENGENHARIA", title: "Integração tecnológica", description: "Telecomunicações, automação, eletrônica e sistemas conectados." }],
+      activities: [ { code: "INTELIGÊNCIA", title: "Agentic AI Factory", description: "Trabalhadores de IA, agentes, modelos e automação inteligente." }, { code: "SOFTWARE", title: "Produtos e plataformas", description: "Aplicações web, móveis e desktop, APIs e integrações." },{ code: "INFRAESTRUTURA", title: "Sistemas e operação", description: "Cloud, ambientes locais e híbridos, redes e computação acelerada." }, { code: "ENGENHARIA", title: "Integração tecnológica", description: "Telecomunicações, automação, eletrônica e sistemas conectados." }],
     },
-    capabilities: { label: "Competências", title: "Know-how completo, sem transformar a página em um currículo.", intro: "O mapa separa a experiência diretamente consolidada das disciplinas relacionadas que podem ser dirigidas, integradas ou administradas com especialistas conforme o escopo de cada projeto.", direct: "Conhecimento direto", adjacent: "Direção e integração", domains: "domínios", topics: "competências", topicCount: "temas", note: "“Direção e integração” não pretende atribuir domínio individual de cada especialidade. Identifica áreas que a Cinteca pode avaliar, contratar, coordenar e governar com responsabilidade técnica.", items: ptCapabilities },
-    products: { label: "Produtos", title: "Produtos com identidade própria.", intro: "Cada produto responde a um contexto específico e possui domínio, comunicação e proposta de valor próprios.", items: [ { name: "NordixBIOS", code: "AGENTIC AI FACTORY", url: productUrls.nordixBios, tag: "Projeto mais recente", description: "Agentic AI Factory: liga-se ao seu software — ERP, CRM, TPV ou SaaS vertical — e fornece a infraestrutura completa para criar e operar trabalhadores de IA em todas as camadas, com a sua marca." },{ name: "LegalNeuron", code: "LEGAL AI", url: productUrls.legalNeuron, description: "Software de inteligência artificial e gestão para profissionais do direito e escritórios. Facilita a análise, revisão e automação de documentos e processos jurídicos." },{ name: "NCS Engine", code: "AI INFRASTRUCTURE", url: productUrls.ncsEngine, description: "Infraestrutura segura para implantar e operar inteligência artificial em ambientes cloud, locais e híbridos." }] },
+    capabilities: { label: "Competências", title: "Know-how completo, sem transformá-lo em um currículo.", intro: "O mapa separa a experiência diretamente consolidada das disciplinas relacionadas que podem ser dirigidas, integradas ou administradas com especialistas conforme o escopo de cada projeto.", direct: "Conhecimento direto", adjacent: "Direção e integração", domains: "domínios", topics: "competências", topicCount: "temas", note: "“Direção e integração” não pretende atribuir domínio individual de cada especialidade. Identifica áreas que a Cinteca pode avaliar, contratar, coordenar e governar com responsabilidade técnica.", items: ptCapabilities },
+    products: { label: "Produtos", title: "Produtos com identidade própria.", intro: "Cada produto responde a um contexto específico e possui domínio, comunicação e proposta de valor próprios.", items: [ { name: "NordixBIOS", code: "AGENTIC AI FACTORY", url: productUrls.nordixBios, tag: "Projeto mais recente", description: "Agentic AI Factory: conecta-se ao seu software — ERP, CRM, POS ou SaaS vertical — e fornece a infraestrutura completa para criar e operar trabalhadores de IA em todas as camadas, com a sua marca." },{ name: "LegalNeuron", code: "LEGAL AI", url: productUrls.legalNeuron, description: "Software de inteligência artificial e gestão para profissionais do direito e escritórios. Facilita a análise, revisão e automação de documentos e processos jurídicos." },{ name: "NCS Engine", code: "AI INFRASTRUCTURE", url: productUrls.ncsEngine, description: "Infraestrutura segura para implantar e operar inteligência artificial em ambientes cloud, locais e híbridos." }] },
     contact: { label: "Contato", title: "Contato protegido.", intro: "Envie sua consulta por este canal protegido. Seu e-mail e nossa caixa de destino nunca são publicados no site.", formLabel: "Registro de comunicação", protectedLabel: "Protegido por Cloudflare Turnstile", name: "Nome", email: "Seu e-mail", company: "Empresa", optional: "Opcional", subject: "Assunto", message: "Mensagem", privacyAcknowledgement: "Li as informações de privacidade deste canal de contato.", privacyLink: "Ver política de privacidade", verification: "Verificação humana", send: "Enviar com segurança", sending: "Enviando…", success: "Sua mensagem foi enviada com segurança. Responderemos por e-mail.", error: "Não foi possível enviar a mensagem. Revise os campos e tente novamente.", turnstileError: "A verificação humana expirou ou falhou. Tente novamente.", configurationError: "O canal de contato protegido ainda não está configurado." },
     legal: {
       label: "Aviso legal", title: "Identificação do titular.", intro: "Informação disponibilizada de forma permanente, direta e gratuita em conformidade com o artigo 10 da Lei espanhola 34/2002, de Serviços da Sociedade da Informação e Comércio Eletrônico.",
@@ -886,22 +884,22 @@ export const translations: Record<Locale, SiteCopy> = {
   nb: {
     localeName: "Norsk bokmål",
     htmlLang: "nb",
-    metadata: { title: "Cinteca · AD Caldas Innotec, S.A.", description: "Det offisielle nettstedet til AD Caldas Innotec, S.A., eier av teknologimerket Cinteca." },
+    metadata: { title: "Cinteca · AD Caldas Innotec, S.A.", description: "Det offisielle firmanettstedet til AD Caldas Innotec, S.A., eier av merket Cinteca: programvareprodukter, KI og digital infrastruktur — NordixBIOS (Agentic AI Factory), LegalNeuron og NCS Engine." },
     languageLabel: "Språk",
     navigationLabel: "Hovednavigasjon",
     menuLabel: "Meny",
     nav: { company: "Selskapet", capabilities: "Kompetanse", products: "Produkter", contact: "Kontakt", legal: "Juridisk informasjon", privacy: "Personvern" },
     registryLabel: "Register",
-    hero: { eyebrow: "Offisielt firmanettsted", title: "Anvendt teknologi, bygget for drift.", titlePre: "Anvendt teknologi,", titleAccent: "bygget for drift.", intro: "Cinteca er teknologimerket til AD Caldas Innotec, S.A. Selskapet utvikler og forvalter programvareprodukter, kunstig intelligens og digital infrastruktur for fagpersoner og virksomheter.", ctaProducts: "Se produktene", ctaContact: "Beskyttet kontakt", entity: "Spansk aksjeselskap", companyName: "Juridisk navn", taxId: "Skatte-ID", registry: "Register", contact: "Kontakt", contactValue: "Beskyttet kanal", completeIdentity: "Se fullstendige selskapsopplysninger" },
+    hero: { eyebrow: "Offisielt firmanettsted", titlePre: "Anvendt teknologi,", titleAccent: "bygget for drift.", intro: "Cinteca er teknologimerket til AD Caldas Innotec, S.A. Selskapet utvikler og forvalter programvareprodukter, kunstig intelligens og digital infrastruktur for fagpersoner og virksomheter.", ctaProducts: "Se produktene", ctaContact: "Beskyttet kontakt", entity: "Spansk aksjeselskap", companyName: "Juridisk navn", taxId: "Skatte-ID", registry: "Register", contact: "Kontakt", contactValue: "Beskyttet kanal", completeIdentity: "Se fullstendige selskapsopplysninger" },
     status: ["Aktivt selskap", "Teknologivirksomhet siden 2014", "Globalt virkeområde · Internasjonale prosjekter", "Produkter med egen identitet"],
     statusLabel: "Selskapsstatus",
     company: {
       label: "Selskapet", title: "Ett selskap. Ulike teknologiprodukter.",
       paragraphs: ["AD Caldas Innotec, S.A. er et spansk aksjeselskap som leverer tjenester innen informasjons- og kommunikasjonsteknologi, inkludert utvikling og forvaltning av nettressurser og programvareapplikasjoner.", "Cinteca representerer konsernets teknologiske og selskapsmessige kjerne. Innenfor denne rammen utvikles produkter og merkevarer med egen identitet for juridiske, forretningsmessige og infrastrukturelle områder. Dette forklarer hvorfor selskapsdomenet og produktene kan ha ulike navn og fortsatt tilhøre samme virksomhetsøkosystem. Prosjektene omfatter allerede flere land, og de eksisterende produktene er utviklet med sikte på gradvis global ekspansjon."],
       linkLabel: "Selskapsforbindelse", linkTitle: "Merke ↔ eierselskap", linkBody: "Cinteca er teknologimerket og den selskapsmessige identiteten knyttet til AD Caldas Innotec, S.A., et selskap stiftet i Spania med skatte-ID A66316399. AD Caldas Innotec, S.A. eier dette nettstedet og er den selskapsmessige rammen for presentasjonen av Cintecas teknologivirksomhet.", activitiesLabel: "Virksomhetsområder",
-      activities: [ { code: "INTELLIGENS", title: "Agentic AI Factory", description: "Assistenter, modeller, automatisering og informasjonsbehandling." }, { code: "PROGRAMVARE", title: "Produkter og plattformer", description: "Web-, mobil- og skrivebordsapplikasjoner, API-er og integrasjoner." },{ code: "INFRASTRUKTUR", title: "Systemer og drift", description: "Sky, lokale og hybride miljøer, nettverk og akselerert databehandling." }, { code: "INGENIØRFAG", title: "Teknologiintegrasjon", description: "Telekommunikasjon, automatisering, elektronikk og tilkoblede systemer." }],
+      activities: [ { code: "INTELLIGENS", title: "Agentic AI Factory", description: "KI-arbeidere, agenter, modeller og intelligent automatisering." }, { code: "PROGRAMVARE", title: "Produkter og plattformer", description: "Web-, mobil- og skrivebordsapplikasjoner, API-er og integrasjoner." },{ code: "INFRASTRUKTUR", title: "Systemer og drift", description: "Sky, lokale og hybride miljøer, nettverk og akselerert databehandling." }, { code: "INGENIØRFAG", title: "Teknologiintegrasjon", description: "Telekommunikasjon, automatisering, elektronikk og tilkoblede systemer." }],
     },
-    capabilities: { label: "Kompetanse", title: "Komplett know-how, uten å gjøre siden til en CV.", intro: "Oversikten skiller mellom direkte etablert erfaring og tilgrensende fagområder som kan ledes, integreres eller administreres sammen med spesialister ut fra prosjektets omfang.", direct: "Direkte kunnskap", adjacent: "Ledelse og integrasjon", domains: "domener", topics: "kompetanseområder", topicCount: "temaer", note: "«Ledelse og integrasjon» innebærer ikke påstand om individuell ekspertise i alle fagområder. Det viser områder Cinteca kan vurdere, kontrahere, koordinere og styre med teknisk ansvar.", items: nbCapabilities },
+    capabilities: { label: "Kompetanse", title: "Komplett know-how, uten å gjøre den om til en CV.", intro: "Oversikten skiller mellom direkte etablert erfaring og tilgrensende fagområder som kan ledes, integreres eller administreres sammen med spesialister ut fra prosjektets omfang.", direct: "Direkte kunnskap", adjacent: "Ledelse og integrasjon", domains: "domener", topics: "kompetanseområder", topicCount: "temaer", note: "«Ledelse og integrasjon» innebærer ikke påstand om individuell ekspertise i alle fagområder. Det viser områder Cinteca kan vurdere, kontrahere, koordinere og styre med teknisk ansvar.", items: nbCapabilities },
     products: { label: "Produkter", title: "Produkter med egen identitet.", intro: "Hvert produkt dekker en bestemt kontekst og har eget domene, kommunikasjon og verdiforslag.", items: [ { name: "NordixBIOS", code: "AGENTIC AI FACTORY", url: productUrls.nordixBios, tag: "Nyeste prosjekt", description: "Agentic AI Factory: kobles til programvaren din — ERP, CRM, kasse eller vertikal SaaS — og leverer full infrastruktur for å skape og drifte KI-arbeidere i alle lag, under din merkevare." },{ name: "LegalNeuron", code: "LEGAL AI", url: productUrls.legalNeuron, description: "Programvare for kunstig intelligens og administrasjon for jurister og advokatfirmaer. Den støtter analyse, gjennomgang og automatisering av juridiske dokumenter og prosesser." },{ name: "NCS Engine", code: "AI INFRASTRUCTURE", url: productUrls.ncsEngine, description: "Sikker infrastruktur for utrulling og drift av kunstig intelligens i skybaserte, lokale og hybride miljøer." }] },
     contact: { label: "Kontakt", title: "Beskyttet kontakt.", intro: "Send henvendelsen gjennom denne beskyttede kanalen. Din e-postadresse og vår mottakeradresse publiseres aldri på nettstedet.", formLabel: "Kommunikasjonsregister", protectedLabel: "Beskyttet av Cloudflare Turnstile", name: "Navn", email: "Din e-post", company: "Selskap", optional: "Valgfritt", subject: "Emne", message: "Melding", privacyAcknowledgement: "Jeg har lest personverninformasjonen for denne kontaktkanalen.", privacyLink: "Se personvernerklæringen", verification: "Menneskelig verifisering", send: "Send sikkert", sending: "Sender…", success: "Meldingen er sendt sikkert. Vi svarer på e-post.", error: "Meldingen kunne ikke sendes. Kontroller feltene og prøv igjen.", turnstileError: "Den menneskelige verifiseringen utløp eller mislyktes. Prøv igjen.", configurationError: "Den beskyttede kontaktkanalen er ennå ikke konfigurert." },
     legal: {

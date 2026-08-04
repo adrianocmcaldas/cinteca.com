@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s · Cinteca",
   },
   description:
-    "Official corporate website of AD Caldas Innotec, S.A., owner of the Cinteca technology brand.",
+    "Official corporate website of AD Caldas Innotec, S.A., owner of the Cinteca brand: software products, AI and digital infrastructure — NordixBIOS (Agentic AI Factory), LegalNeuron and NCS Engine.",
   alternates: {
     canonical: "https://cinteca.es",
     languages: {
@@ -64,12 +64,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_GB",
-    alternateLocale: ["pt_PT", "es_ES", "nb_NO"],
+    alternateLocale: ["pt_BR", "es_ES", "nb_NO"],
     url: "https://cinteca.es",
     siteName: "Cinteca",
     title: "Cinteca · AD Caldas Innotec, S.A.",
     description:
-      "Software, AI, telecommunications, automation and infrastructure by AD Caldas Innotec, S.A.",
+      "Official corporate website of AD Caldas Innotec, S.A., owner of the Cinteca brand: software products, AI and digital infrastructure — NordixBIOS (Agentic AI Factory), LegalNeuron and NCS Engine.",
     images: [
       {
         url: "/og.png",
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cinteca · AD Caldas Innotec, S.A.",
     description:
-      "Software, AI, telecommunications, automation and infrastructure by AD Caldas Innotec, S.A.",
+      "Official corporate website of AD Caldas Innotec, S.A., owner of the Cinteca brand: software products, AI and digital infrastructure — NordixBIOS (Agentic AI Factory), LegalNeuron and NCS Engine.",
     images: ["/og.png"],
   },
 };

@@ -57,7 +57,7 @@ test("presents direct and adjacent know-how across the full capability map", asy
     html,
     /13(?:<!-- -->|\s)*domains(?:<!-- -->|\s)*·(?:<!-- -->|\s)*195(?:<!-- -->|\s)*capabilities/,
   );
-  assert.match(html, /Digital signal processing since 2003/);
+  assert.match(html, /Digital signal processing/);
   assert.match(html, /AWS, Microsoft Azure and Google Cloud/);
   assert.match(html, /Residential and industrial automation/);
   assert.match(html, /Technical and editorial SEO/);
