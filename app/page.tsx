@@ -385,6 +385,12 @@ export default function Home() {
             addressRegion: "Cádiz",
             addressCountry: "ES",
           },
+          founder: {
+            "@type": "Person",
+            "@id": "https://adrianocaldas.com/#person",
+            name: "Adriano César Moreno Caldas",
+            url: "https://adrianocaldas.com",
+          },
           brand: { "@id": "https://cinteca.es/#brand" },
           sameAs: copy.products.items.map((product) => product.url),
           knowsAbout: copy.capabilities.items.flatMap((capability) => [
@@ -559,6 +565,14 @@ export default function Home() {
               <div>
                 <dt>{copy.hero.registry}</dt>
                 <dd>RM Cádiz · Hoja CA-56553</dd>
+              </div>
+              <div>
+                <dt>{copy.hero.founder}</dt>
+                <dd>
+                  <a href="https://adrianocaldas.com" target="_blank" rel="noreferrer">
+                    Adriano Caldas
+                  </a>
+                </dd>
               </div>
               <div>
                 <dt>{copy.hero.contact}</dt>
@@ -965,7 +979,10 @@ export default function Home() {
           <p>
             © {new Date().getFullYear()} AD Caldas Innotec, S.A.
             <span className="footer-registry">
-              NIF A66316399 · RM Cádiz · Hoja CA-56553
+              NIF A66316399 · RM Cádiz · Hoja CA-56553 ·{" "}
+              <a href="https://adrianocaldas.com" target="_blank" rel="noreferrer">
+                {copy.hero.founder}: Adriano Caldas
+              </a>
             </span>
           </p>
           <p>{copy.footer.noTracking}</p>

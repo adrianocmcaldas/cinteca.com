@@ -59,6 +59,7 @@ export type SiteCopy = {
     companyName: string;
     taxId: string;
     registry: string;
+    founder: string;
     contact: string;
     contactValue: string;
     completeIdentity: string;
@@ -728,7 +729,7 @@ export const translations: Record<Locale, SiteCopy> = {
       entity: "Spanish commercial company",
       companyName: "Legal name",
       taxId: "Tax ID",
-      registry: "Registry",
+      registry: "Registry", founder: "Founder",
       contact: "Contact",
       contactValue: "Protected channel",
       completeIdentity: "View complete company details",
@@ -837,7 +838,7 @@ export const translations: Record<Locale, SiteCopy> = {
     menuLabel: "Menú",
     nav: { company: "Empresa", capabilities: "Capacidades", products: "Productos", contact: "Contacto", legal: "Aviso legal", privacy: "Privacidad" },
     registryLabel: "Registro",
-    hero: { eyebrow: "Sitio corporativo oficial", titlePre: "Tecnología aplicada,", titleAccent: "construida para operar.", intro: "Cinteca es la marca tecnológica de AD Caldas Innotec, S.A. La compañía desarrolla y gestiona productos de software, inteligencia artificial e infraestructura digital para profesionales y organizaciones.", ctaProducts: "Ver productos", ctaContact: "Contacto protegido", entity: "Entidad mercantil española", companyName: "Razón social", taxId: "NIF", registry: "Registro", contact: "Contacto", contactValue: "Canal protegido", completeIdentity: "Ver identificación completa" },
+    hero: { eyebrow: "Sitio corporativo oficial", titlePre: "Tecnología aplicada,", titleAccent: "construida para operar.", intro: "Cinteca es la marca tecnológica de AD Caldas Innotec, S.A. La compañía desarrolla y gestiona productos de software, inteligencia artificial e infraestructura digital para profesionales y organizaciones.", ctaProducts: "Ver productos", ctaContact: "Contacto protegido", entity: "Entidad mercantil española", companyName: "Razón social", taxId: "NIF", registry: "Registro", founder: "Fundador", contact: "Contacto", contactValue: "Canal protegido", completeIdentity: "Ver identificación completa" },
     status: ["Empresa activa", "Actividad tecnológica desde 2014", "Alcance global · Proyectos internacionales", "Productos con identidad propia"],
     statusLabel: "Estado de la empresa",
     company: {
@@ -867,7 +868,7 @@ export const translations: Record<Locale, SiteCopy> = {
     menuLabel: "Menu",
     nav: { company: "Empresa", capabilities: "Competências", products: "Produtos", contact: "Contato", legal: "Aviso legal", privacy: "Privacidade" },
     registryLabel: "Registro",
-    hero: { eyebrow: "Site corporativo oficial", titlePre: "Tecnologia aplicada,", titleAccent: "construída para operar.", intro: "Cinteca é a marca tecnológica da AD Caldas Innotec, S.A. A empresa desenvolve e gerencia produtos de software, inteligência artificial e infraestrutura digital para profissionais e organizações.", ctaProducts: "Ver produtos", ctaContact: "Contato protegido", entity: "Sociedade mercantil espanhola", companyName: "Razão social", taxId: "NIF", registry: "Registro", contact: "Contato", contactValue: "Canal protegido", completeIdentity: "Ver identificação completa" },
+    hero: { eyebrow: "Site corporativo oficial", titlePre: "Tecnologia aplicada,", titleAccent: "construída para operar.", intro: "Cinteca é a marca tecnológica da AD Caldas Innotec, S.A. A empresa desenvolve e gerencia produtos de software, inteligência artificial e infraestrutura digital para profissionais e organizações.", ctaProducts: "Ver produtos", ctaContact: "Contato protegido", entity: "Sociedade mercantil espanhola", companyName: "Razão social", taxId: "NIF", registry: "Registro", founder: "Fundador", contact: "Contato", contactValue: "Canal protegido", completeIdentity: "Ver identificação completa" },
     status: ["Empresa ativa", "Atividade tecnológica desde 2014", "Atuação global · Projetos internacionais", "Produtos com identidade própria"],
     statusLabel: "Estado da empresa",
     company: {
@@ -897,7 +898,7 @@ export const translations: Record<Locale, SiteCopy> = {
     menuLabel: "Meny",
     nav: { company: "Selskapet", capabilities: "Kompetanse", products: "Produkter", contact: "Kontakt", legal: "Juridisk informasjon", privacy: "Personvern" },
     registryLabel: "Register",
-    hero: { eyebrow: "Offisielt firmanettsted", titlePre: "Anvendt teknologi,", titleAccent: "bygget for drift.", intro: "Cinteca er teknologimerket til AD Caldas Innotec, S.A. Selskapet utvikler og forvalter programvareprodukter, kunstig intelligens og digital infrastruktur for fagpersoner og virksomheter.", ctaProducts: "Se produktene", ctaContact: "Beskyttet kontakt", entity: "Spansk aksjeselskap", companyName: "Juridisk navn", taxId: "Skatte-ID", registry: "Register", contact: "Kontakt", contactValue: "Beskyttet kanal", completeIdentity: "Se fullstendige selskapsopplysninger" },
+    hero: { eyebrow: "Offisielt firmanettsted", titlePre: "Anvendt teknologi,", titleAccent: "bygget for drift.", intro: "Cinteca er teknologimerket til AD Caldas Innotec, S.A. Selskapet utvikler og forvalter programvareprodukter, kunstig intelligens og digital infrastruktur for fagpersoner og virksomheter.", ctaProducts: "Se produktene", ctaContact: "Beskyttet kontakt", entity: "Spansk aksjeselskap", companyName: "Juridisk navn", taxId: "Skatte-ID", registry: "Register", founder: "Grunnlegger", contact: "Kontakt", contactValue: "Beskyttet kanal", completeIdentity: "Se fullstendige selskapsopplysninger" },
     status: ["Aktivt selskap", "Teknologivirksomhet siden 2014", "Globalt virkeområde · Internasjonale prosjekter", "Produkter med egen identitet"],
     statusLabel: "Selskapsstatus",
     company: {
